@@ -9,6 +9,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  font-size: 18px;
 }
 
 h2 {
@@ -26,7 +27,6 @@ footer a,
 header p,
 header a {
   color: #e5e7eb;
-  font-size: 18px;
 }
 
 /* HEADER */
@@ -69,6 +69,9 @@ nav ul li a {
   display: block;
   /*margin-left: 10px;*/
 }
+nav ul li a:hover {
+  color: #3882f6;
+}
 
 header .content-hero {
   flex: 1;
@@ -80,16 +83,13 @@ header .content-hero {
 .conent-hero-child {
   width: 50%;
   height: 250px;
-  /* border: 5px solid hotpink; */
   position: relative;
-  /* overflow: hidden; */
 }
 
 .conent-hero-child img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /*  object-position: 1% 50%; */
 }
 
 header .title {
@@ -97,9 +97,56 @@ header .title {
   font-weight: 900;
   color: #f9faf8;
 }
+header .content-hero a {
+  display: inline-block;
+  margin-top: 7px;
+  background-color: #3882f6;
+  border: 2px solid #1f2937;
+  border-radius: 8px;
+  padding: 5px 20px;
+  color: #e5e7eb;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
 
-/* Great-species section*/
+/* GREAT-SPECIES SECTION*/
 .great-species {
+  display: flex;
+  color: #1f2937;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+.great-species h2 {
+  margin: 40px 0;
+}
+
+#contect_cards {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.cards {
+  width: 170px;
+  text-align: center;
+}
+
+.content_image_card {
+  overflow: hidden;
+  border: 4px solid #3882f6;
+  border-radius: 10px;
+  height: 170px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.content_image_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* QUOTE SECTION  */
@@ -123,4 +170,52 @@ header .title {
   font-weight: 700;
   text-align: end;
   font-size: 24px;
+}
+
+/* SUBSCRIBE SECTION */
+.subscribe {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  color: #e5e7eb;
+}
+.subscribe h3 {
+  font-size: 24px;
+}
+.subscribe p {
+}
+.subscribe .content_text_button {
+  width: 75vw;
+  background-color: #3882f6;
+  height: 50%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.subscribe button {
+  background-color: #3882f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 5px 20px;
+  color: #e5e7eb;
+  font-size: 18px;
+  font-weight: 700;
+}
+/* FOOTER */
+
+footer {
+  display: flex;
+  height: 15vh;
+  align-items: center;
+  justify-content: center;
+}
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #3882f6;
 }
