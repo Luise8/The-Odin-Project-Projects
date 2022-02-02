@@ -6,11 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
-  <script src="all-scripts.js"></script>
+  <script defer src="all-scripts.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div id="cover">
+    <h1 id="resultGame"></h1>
+    <button id="play-game">
+      Do you play a game
+    </button>
+  </div>
 
+  <!-- Add a div that will show the current result by round and replace the concole.log -->
+  <div id="background-playing"></div>
+  <div id="initial-text">
+    <h1>Rock, Paper, Scissors?</h1>
+    <h2 id="score">Score</h2>
+    <p id="winner-round"></p>
+  </div>
+  <div id="result">
+    <div class="points">
+      <h2>Player</h2>
+      <p id="player"></p>
+    </div>
+    <h4 id="vs">VS</h4>
+    <div class="points">
+      <h2>Computer</h2>
+      <p id="computer"></p>
+    </div>
+  </div>
+
+  <!-- // This div will show the result and anunciate the winner with his five points -->
+  <h2 id="make-choice">Make a choice</h2>
+
+  <!-- Create three buttons to each choice -->
+  <div id="contentButtons">
+    <div class="content-choices">
+      <button id="rock" class="choices">Rock</button>
+    </div>
+    <div class="content-choices">
+      <button id="paper" class="choices">Paper</button>
+    </div>
+    <div class="content-choices">
+      <button id="scissors" class="choices">Scissors</button>
+    </div>
+  </div>
 </body>
 
 </html>

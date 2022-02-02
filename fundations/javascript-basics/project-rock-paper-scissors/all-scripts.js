@@ -19,71 +19,74 @@ function playRound(playerSelection, computerSelection) {
     : `You Lose! ${computerSelection} beats ${playerSelection}`;
 }
 
-// Declare a game function that will loop for five rounds, calling the playRound function each round and storing the score in two counters: one for the user and one for the machine. When I finished the loop, it should print the winner of the 5 rounds and generate the replay option, which will reset the counters to 0.
-function game() {
-  console.log("Game started");
-  console.log("\n");
-  let counUser = 0;
-  let countComputer = 0;
-  let playerSelection1;
-  let winner;
-  let fiveCount = 0;
-  while (counUser == countComputer || fiveCount < 5) {
-    fiveCount++;
-    // playerSelection should not be case sensitive
-    // playerSelection should use prompt()
-    playerSelection1 = prompt("Write your election")
-      .split("")
-      .map((letter, i) =>
-        i == 0 ? letter.toUpperCase() : letter.toLowerCase()
-      )
-      .join("");
+// Counter of points to computer and player and other variables
+let countUser = document.querySelector("#player");
+let countComputer = document.querySelector("#computer");
+let roundCount;
+let winnerRound = document.querySelector("#winner-round");
+const contentButtons = document.querySelector("#contentButtons");
+let cover = document.querySelector("#cover");
+let playAgainbutton = document.querySelector("#play-game");
 
-    // Check that the user Enter a valid option
-    while (
-      playerSelection1 != "Scissors" &&
-      playerSelection1 != "Paper" &&
-      playerSelection1 != "Rock"
-    ) {
-      playerSelection1 = prompt(
-        "Please write a valid option: Rock, Paper or Scissors."
-      )
-        .split("")
-        .map((letter, i) =>
-          i == 0 ? letter.toUpperCase() : letter.toLowerCase()
-        )
-        .join("");
-    }
+// Variables and function of the screen that shows the final result and asks if you want to play again
+// It also resets all counter values.
+playAgainbutton.addEventListener("click", (button) => {
+  countUser.textContent = 0;
+  countComputer.textContent = 0;
+  roundCount = 0;
+  winnerRound.style.color = "#c8d1d1";
+  winnerRound.textContent = "First round";
+  cover.style.display = "none";
+  contentButtons.style.display = "flex";
+  if (playAgainbutton.textContent !== "Do you want to play a game again?") {
+    playAgainbutton.textContent = "Do you want to play a game again?";
+  }
+  resultGame.style.color = "black";
+});
 
-    winner = playRound(playerSelection1, computerPlay());
-    console.log("Round: " + fiveCount + " " + winner);
+// Add addEventListener to each button that calls playRound with the playerSelection
+const buttons = document.querySelectorAll("button.choices");
+Array.from(buttons).forEach((button) => {
+  // and for each one we add a 'click' listener
+  button.addEventListener("click", () => {
+    winner = playRound(button.textContent, computerPlay());
     if (/You win!/.test(winner)) {
-      counUser++;
+      countUser.textContent++;
+      winnerRound.style.color = "#37a647";
     } else if (/You Lose!/.test(winner)) {
-      countComputer++;
+      countComputer.textContent++;
+      winnerRound.style.color = "#ee4343";
+    } else {
+      winnerRound.style.color = "#c8d1d1";
     }
+    roundCount++;
+    winnerRound.textContent = `Round ${roundCount}: ${winner}`;
 
-    console.log(
-      `You have ${counUser} wins and Computer have ${countComputer} wins`
-    );
-    console.log("\n");
+    // When player or computer gets 5 points, then anunciate result and ask for another play?
+    if (countUser.textContent == 5 || countComputer.textContent == 5) {
+      contentButtons.style.display = "none";
+      cover.style.display = "flex";
+      if (resultGame.style.width !== "100%") {
+        resultGame.style.width = "100%";
+      }
+      if (countUser.textContent > countComputer.textContent) {
+        resultGame.textContent = `You have won ${countUser.textContent} to ${countComputer.textContent}`;
+        resultGame.style.color = "#05F258";
+      } else {
+        resultGame.textContent = `You have lost ${countUser.textContent} to ${countComputer.textContent}`;
+        resultGame.style.color = "brown";
+      }
+    }
+  });
+});
+
+// Code to adjust the height of the election buttons according to the width dynamically.
+const contentChoices = document.querySelectorAll(".content-choices");
+Array.from(contentChoices).forEach((contentChoice) => {
+  function changeHeight() {
+    if (contentChoice.offsetWidth != contentChoice.offsetHeight) {
+      contentChoice.style.height = contentChoice.offsetWidth + "px";
+    }
   }
-
-  const result =
-    counUser > countComputer
-      ? `You have won ${counUser} to ${countComputer}`
-      : `You have lost ${counUser} to ${countComputer}`;
-  console.log(result);
-  return result;
-}
-
-alert(
-  "Press F12 or CTRL (or Command) + SHIFT + I to access the console and view the game."
-);
-while (true) {
-  let start = prompt("Enter 'start' to start new game").toLowerCase();
-  while (start != "start") {
-    start = prompt("Enter 'start' to start new game").toLowerCase();
-  }
-  game();
-}
+  new ResizeObserver(changeHeight).observe(contentChoice);
+});
