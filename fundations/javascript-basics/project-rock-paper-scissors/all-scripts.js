@@ -24,7 +24,7 @@ let countUser = document.querySelector("#player");
 let countComputer = document.querySelector("#computer");
 let roundCount;
 let winnerRound = document.querySelector("#winner-round");
-const contentButtons = document.querySelector("#contentButtons");
+const backgroundPlaying = document.querySelector("#background-playing");
 let cover = document.querySelector("#cover");
 let playAgainbutton = document.querySelector("#play-game");
 
@@ -37,7 +37,7 @@ playAgainbutton.addEventListener("click", (button) => {
   winnerRound.style.color = "#c8d1d1";
   winnerRound.textContent = "First round";
   cover.style.display = "none";
-  contentButtons.style.display = "flex";
+  backgroundPlaying.style.display = "block";
   if (playAgainbutton.textContent !== "Do you want to play a game again?") {
     playAgainbutton.textContent = "Do you want to play a game again?";
   }
@@ -64,7 +64,7 @@ Array.from(buttons).forEach((button) => {
 
     // When player or computer gets 5 points, then anunciate result and ask for another play?
     if (countUser.textContent == 5 || countComputer.textContent == 5) {
-      contentButtons.style.display = "none";
+      backgroundPlaying.style.display = "none";
       cover.style.display = "flex";
       if (resultGame.style.width !== "100%") {
         resultGame.style.width = "100%";
