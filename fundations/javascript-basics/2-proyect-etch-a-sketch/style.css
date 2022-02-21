@@ -19,6 +19,20 @@ body {
 h1 {
   font-size: 50px;
 }
+#content-mid {
+  display: flex;
+  gap: 50px;
+}
+
+#container-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+#color,
+#size-value {
+  margin: 0 auto;
+}
 
 #container-sheet {
   width: 500px;
@@ -33,14 +47,18 @@ h1 {
   position: relative;
 }
 
-#container-sheet .two {
+#container-sheet .row-container {
   background-color: var(--sheet);
   flex: 1;
   display: flex;
   gap: 1px;
 }
 
-#container-sheet .two div {
+#container-sheet .row-container div {
   background-color: white;
   flex: 1;
 }
+
+/* #container-sheet .row-container #test {
+  background-color: black;
+} */

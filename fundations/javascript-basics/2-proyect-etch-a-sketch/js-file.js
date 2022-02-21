@@ -2,21 +2,52 @@
 
 /*  Create a webpage with a 16x16 grid of square divs.
         Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your html file! */
-const container = document.querySelector("#container");
-/* container.style.width = "100px"; */
+// Show dynamically the value of sheet when is changed
+const sizeSheet = document.querySelector("#size-sheet");
+sizeSheet.value = 16;
+const sizeValue = document.querySelector("#size-value");
+sizeSheet.oninput = showValue;
+function showValue(e) {
+  sizeValue.textContent = `${e.target.value} x ${e.target.value}`;
+}
+
+// Show and hide the grid
+const containerSheet = document.querySelector("#container-sheet");
+const rowContainer = document.querySelectorAll(".row-container");
+Array.from(rowContainer);
+const gridShowHide = document.querySelector("#grid-show-hide");
+
+gridShowHide.addEventListener("click", () => {
+  if (gridShowHide.value === "yes") {
+    containerSheet.style.gap = "0";
+    rowContainer.forEach((e) => {
+      e.style.gap = "0";
+    });
+    gridShowHide.value = "no";
+  } else {
+    containerSheet.style.gap = "1px";
+    rowContainer.forEach((e) => {
+      e.style.gap = "1px";
+    });
+    gridShowHide.value = "yes";
+  }
+});
+
+/* const container = document.querySelector("#container");
+container.style.width = "100px";
 container.style.height = "100px";
 const lengt = 16;
 for (let i = 0; i < 16; i++) {
   const div = document.createElement("div");
   container.appendChild(div);
-  /* alert(div.style.width); */
-  /*   container.style.alignItems = "center";
-  container.style.justifyContent = "center"; */
+  alert(div.style.width);
+    container.style.alignItems = "center";
+  container.style.justifyContent = "center";
 }
 const div1 = document.querySelector("#container div");
 
 container.style.width = lengt * 10 + 15 + "px";
-alert(div1.offsetWidth);
+alert(div1.offsetWidth); */
 
 /*It’s best to put your grid squares inside another “container” div (which can go directly in your html).
         There are several different ways to make the divs appear as a grid (versus just one on each line). Feel free to use any or play with each of them:
