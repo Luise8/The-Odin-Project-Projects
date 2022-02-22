@@ -11,28 +11,71 @@ function showValue(e) {
   sizeValue.textContent = `${e.target.value} x ${e.target.value}`;
 }
 
-// Show and hide the grid
 const containerSheet = document.querySelector("#container-sheet");
+// Create number of divs
+// Function that create the row-containers
+function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
+  for (let i = 0; i < numberOfElments; i++) {
+    const div = document.createElement("div");
+    div.classList.add(...classesNames);
+    parentElement.appendChild(div);
+  }
+}
+/* const number = 16; */
+createAndAddElements(16, containerSheet, "row-container", "grid-lines");
 const rowContainer = document.querySelectorAll(".row-container");
 Array.from(rowContainer);
-const gridShowHide = document.querySelector("#grid-show-hide");
+for (let i = 0; i < 16; i++) {
+  createAndAddElements(16, rowContainer[i], "row-childs");
+}
+/* function updateGrid(number) {
+  createAndAddElements(number, containerSheet, "row-container", "grid-lines");
+  const rowContainer = document.querySelectorAll(".row-container");
+  Array.from(rowContainer);
+  createAndAddElements(number, rowContainer, "row-childs");
+}
+updateGrid(16); */
+/* const div = document.querySelector("#container .row-container"); */
+/* for (let i = 0; i < ) */
 
+/* function addingElements(numberOfElements, parentElement, childElement) {
+  for (let i = 0; i < numberOfElements; i++) {
+    parentElement.appendChild(childElement);
+  }
+}
+
+for (let i = 4; i < numberOfElements; i++) {
+  parentElement.appendChild(childElement);
+} */
+/* function createRowContents(parentElement, class, number) {
+  for (let j = 0; j < number; j++) {
+      createNumberOfElements(number)
+  }
+} */
+/* function test(a, ...casa) {
+  console.log(casa);
+  console.log(...casa);
+}
+test(2, 3, 4, 5, "def", "perro"); */
+/* const container = document.querySelector("#container-sheet"); */
+
+// Show and hide the grid
+const gridShowHide = document.querySelector("#grid-show-hide");
 gridShowHide.addEventListener("click", () => {
   if (gridShowHide.value === "yes") {
-    containerSheet.style.gap = "0";
+    containerSheet.classList.toggle("grid-lines");
     rowContainer.forEach((e) => {
-      e.style.gap = "0";
+      e.classList.toggle("grid-lines");
     });
     gridShowHide.value = "no";
   } else {
-    containerSheet.style.gap = "1px";
+    containerSheet.classList.toggle("grid-lines");
     rowContainer.forEach((e) => {
-      e.style.gap = "1px";
+      e.classList.toggle("grid-lines");
     });
     gridShowHide.value = "yes";
   }
 });
-
 /* const container = document.querySelector("#container");
 container.style.width = "100px";
 container.style.height = "100px";

@@ -42,19 +42,22 @@ h1 {
   flex-wrap: wrap;
   /* justify-content: center; */
   flex-direction: column;
-  gap: 1px;
   border: 1px solid black;
   position: relative;
 }
 
-#container-sheet .row-container {
-  background-color: var(--sheet);
-  flex: 1;
-  display: flex;
+/* Class to show and hide grid lines */
+.grid-lines {
   gap: 1px;
 }
 
-#container-sheet .row-container div {
+.row-container {
+  background-color: var(--sheet);
+  flex: 1;
+  display: flex;
+}
+
+.row-childs {
   background-color: white;
   flex: 1;
 }
