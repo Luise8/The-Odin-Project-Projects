@@ -42,8 +42,8 @@ h1 {
   min-height: 450px;
   display: grid;
   background-color: var(--sheet);
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  /* grid-template-rows: repeat(16, 1fr); */
   border: 1px solid black;
   position: relative;
   padding: 0.1em;
@@ -51,7 +51,7 @@ h1 {
 
 /* Class to show and hide grid lines */
 .grid-lines {
-  gap: 1px;
+  gap: 0.1em;
 }
 
 .row-container {

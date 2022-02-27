@@ -2,17 +2,10 @@
 
 /*  Create a webpage with a 16x16 grid of square divs.
         Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your html file! */
-// Show dynamically the value of sheet when is changed
-const sizeSheet = document.querySelector("#size-sheet");
-sizeSheet.value = 16;
-const sizeValue = document.querySelector("#size-value");
-sizeSheet.oninput = showValue;
-function showValue(e) {
-  sizeValue.textContent = `${e.target.value} x ${e.target.value}`;
-}
 
-const containerSheet = document.querySelector("#container-sheet");
 // Create number of divs
+const containerSheet = document.querySelector("#container-sheet");
+let rowContainer;
 // Function that create the row-containers
 function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
   for (let i = 0; i < numberOfElments * numberOfElments; i++) {
@@ -21,9 +14,32 @@ function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
     parentElement.appendChild(div);
   }
 }
-/* const number = 16; */
+
+// Select items to change and show the size of sheet dynamically
 createAndAddElements(16, containerSheet, "row-container");
-const rowContainer = document.querySelectorAll(".row-container");
+rowContainer = document.querySelectorAll(".row-container");
+const sizeSheet = document.querySelector("#size-sheet");
+sizeSheet.value = 16;
+const sizeValue = document.querySelector("#size-value");
+
+// Change dynamically size of sheet
+sizeSheet.addEventListener("input", (e) => {
+  rowContainer.forEach((element) => {
+    element.remove();
+  });
+  createAndAddElements(e.target.value, containerSheet, "row-container");
+  rowContainer = document.querySelectorAll(".row-container");
+  containerSheet.style.gridTemplate = `repeat(${e.target.value}, 1fr) / repeat(${e.target.value}, 1fr)`;
+  /* containerSheet.style.gridTemplateRows = `repeat(${e.target.value}, 1fr)`; */
+});
+
+// Show dynamically the value of sheet when is changed
+sizeSheet.addEventListener("input", showValue);
+function showValue(e) {
+  sizeValue.textContent = `${e.target.value} x ${e.target.value}`;
+}
+
+/* const number = 16; */
 
 /* Array.from(rowContainer);
 for (let i = 0; i < 16; i++) {
