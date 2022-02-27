@@ -8,8 +8,9 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +38,15 @@ h1 {
 #container-sheet {
   width: 500px;
   height: 500px;
-  display: flex;
+  min-height: 450px;
+  min-height: 450px;
+  display: grid;
   background-color: var(--sheet);
-  flex-wrap: wrap;
-  /* justify-content: center; */
-  flex-direction: column;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
   border: 1px solid black;
   position: relative;
+  padding: 0.1em;
 }
 
 /* Class to show and hide grid lines */
@@ -52,16 +55,12 @@ h1 {
 }
 
 .row-container {
-  background-color: var(--sheet);
-  flex: 1;
-  display: flex;
-}
-
-.row-childs {
   background-color: white;
-  flex: 1;
 }
 
-/* #container-sheet .row-container #test {
-  background-color: black;
-} */
+/* RESPONSIVE FOR BIG SCREEN */
+@media (min-width: 1400px) {
+  .grid-lines {
+    gap: 0.2em;
+  }
+}

@@ -15,19 +15,20 @@ const containerSheet = document.querySelector("#container-sheet");
 // Create number of divs
 // Function that create the row-containers
 function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
-  for (let i = 0; i < numberOfElments; i++) {
+  for (let i = 0; i < numberOfElments * numberOfElments; i++) {
     const div = document.createElement("div");
     div.classList.add(...classesNames);
     parentElement.appendChild(div);
   }
 }
 /* const number = 16; */
-createAndAddElements(16, containerSheet, "row-container", "grid-lines");
+createAndAddElements(16, containerSheet, "row-container");
 const rowContainer = document.querySelectorAll(".row-container");
-Array.from(rowContainer);
+
+/* Array.from(rowContainer);
 for (let i = 0; i < 16; i++) {
   createAndAddElements(16, rowContainer[i], "row-childs");
-}
+} */
 /* function updateGrid(number) {
   createAndAddElements(number, containerSheet, "row-container", "grid-lines");
   const rowContainer = document.querySelectorAll(".row-container");
@@ -64,15 +65,9 @@ const gridShowHide = document.querySelector("#grid-show-hide");
 gridShowHide.addEventListener("click", () => {
   if (gridShowHide.value === "yes") {
     containerSheet.classList.toggle("grid-lines");
-    rowContainer.forEach((e) => {
-      e.classList.toggle("grid-lines");
-    });
     gridShowHide.value = "no";
   } else {
     containerSheet.classList.toggle("grid-lines");
-    rowContainer.forEach((e) => {
-      e.classList.toggle("grid-lines");
-    });
     gridShowHide.value = "yes";
   }
 });
