@@ -19,8 +19,22 @@ function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
 createAndAddElements(16, containerSheet, "row-container");
 rowContainer = document.querySelectorAll(".row-container");
 const sizeSheet = document.querySelector("#size-sheet");
-sizeSheet.value = 16;
+sizeSheet.value = "16";
 const sizeValue = document.querySelector("#size-value");
+
+// Aplly color selected on div selected
+let inputColor = document.querySelector("#color");
+inputColor.value = "#000";
+
+// Function to drawing when hold down mouse javascript event
+function drawDivs() {
+  rowContainer.forEach((square) => {
+    square.addEventListener("mousedown", () => {
+      square.style.backgroundColor = inputColor.value;
+    });
+  });
+}
+drawDivs();
 
 // Update dynamically size of sheet
 sizeSheet.addEventListener("input", (e) => {
@@ -30,7 +44,7 @@ sizeSheet.addEventListener("input", (e) => {
   createAndAddElements(e.target.value, containerSheet, "row-container");
   rowContainer = document.querySelectorAll(".row-container");
   containerSheet.style.gridTemplate = `repeat(${e.target.value}, 1fr) / repeat(${e.target.value}, 1fr)`;
-  /* containerSheet.style.gridTemplateRows = `repeat(${e.target.value}, 1fr)`; */
+  drawDivs();
 });
 
 // Show dynamically the value of sheet when is changed
