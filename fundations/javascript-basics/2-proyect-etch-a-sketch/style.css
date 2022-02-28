@@ -38,8 +38,6 @@ h1 {
 #container-sheet {
   width: 500px;
   height: 500px;
-  min-height: 450px;
-  min-height: 450px;
   display: grid;
   background-color: var(--sheet);
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
@@ -51,7 +49,7 @@ h1 {
 
 /* Class to show and hide grid lines */
 .grid-lines {
-  gap: 0.1em;
+  gap: 1px;
 }
 
 .row-container {
@@ -59,8 +57,33 @@ h1 {
 }
 
 /* RESPONSIVE FOR BIG SCREEN */
+@media (min-width: 1100px) {
+  .grid-lines {
+    gap: 0.1333em;
+  }
+  #container-sheet {
+    flex: 1;
+  }
+}
+
 @media (min-width: 1400px) {
   .grid-lines {
     gap: 0.2em;
+  }
+  #container-sheet {
+    width: 1000px;
+    height: 1000px;
+    flex: 1;
+  }
+}
+
+@media (min-width: 2000px) {
+  .grid-lines {
+    gap: 0.4999em;
+  }
+  #container-sheet {
+    width: 1500px;
+    height: 1500px;
+    flex: 1;
   }
 }

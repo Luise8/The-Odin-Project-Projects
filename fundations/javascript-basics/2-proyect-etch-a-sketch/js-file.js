@@ -15,14 +15,14 @@ function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
   }
 }
 
-// Select items to change and show the size of sheet dynamically
+// Select items to update and show the size of sheet dynamically
 createAndAddElements(16, containerSheet, "row-container");
 rowContainer = document.querySelectorAll(".row-container");
 const sizeSheet = document.querySelector("#size-sheet");
 sizeSheet.value = 16;
 const sizeValue = document.querySelector("#size-value");
 
-// Change dynamically size of sheet
+// Update dynamically size of sheet
 sizeSheet.addEventListener("input", (e) => {
   rowContainer.forEach((element) => {
     element.remove();
