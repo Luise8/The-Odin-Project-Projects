@@ -26,18 +26,35 @@ const sizeValue = document.querySelector("#size-value");
 let inputColor = document.querySelector("#color");
 inputColor.value = "#000";
 
-// Function to drawing when hold down mouse javascript event
+// Drawing when hold down mouse javascript event
 let mouseDown = false;
 window.addEventListener("mouseup", () => {
   mouseDown = false;
 });
-function drawDivs() {
+
+containerSheet.addEventListener("mousedown", (event) => {
+  /*   if (!event.target.classList.contains("row-container")) {
+    event.relatedTarget.style.backgroundColor = inputColor.value;
+  } */ //Gap Problem
+  if (event.target.classList.contains("row-container")) {
+    event.target.style.backgroundColor = inputColor.value;
+  }
+  console.log(event.target);
+  mouseDown = true;
+});
+containerSheet.addEventListener("mouseover", (event) => {
+  if (mouseDown && event.target.classList.contains("row-container")) {
+    event.target.style.backgroundColor = inputColor.value;
+  }
+});
+
+/* function drawDivs() {
   rowContainer.forEach((square) => {
-    square.addEventListener("mousedown", () => {
+        square.addEventListener("mousedown", () => {
       square.style.backgroundColor = inputColor.value;
       mouseDown = true;
-    });
-    square.addEventListener("mouseenter", () => {
+    }); 
+        square.addEventListener("mouseenter", () => {
       if (mouseDown) {
         square.style.backgroundColor = inputColor.value;
       }
@@ -45,21 +62,21 @@ function drawDivs() {
   });
 }
 drawDivs();
-
+ */
 // TO DO: EXPLORE IF YOU CAN SELECT THE CONTAINER AND APPLY FUNCTIONS ON IT THAT ARE IN EACH INDIVIDUAL CHILD, TO ACHIEVE GREATER PERFORMANCE,
 /* console.log((containerSheet.firstElementChild.style.backgroundColor = "red"));
 containerSheet.addEventListener("click"; (event) => {
   event.target.
 }) */
 // Update dynamically size of sheet
-sizeSheet.addEventListener("input", (e) => {
+sizeSheet.addEventListener("change", (e) => {
   rowContainer.forEach((element) => {
     element.remove();
   });
   createAndAddElements(e.target.value, containerSheet, "row-container");
   rowContainer = document.querySelectorAll(".row-container");
   containerSheet.style.gridTemplate = `repeat(${e.target.value}, 1fr) / repeat(${e.target.value}, 1fr)`;
-  drawDivs();
+  /*  drawDivs(); */
 });
 
 // Show dynamically the value of sheet when is changed

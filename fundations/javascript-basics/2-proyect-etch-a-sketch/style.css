@@ -41,7 +41,6 @@ h1 {
   display: grid;
   background-color: var(--sheet);
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  /* grid-template-rows: repeat(16, 1fr); */
   border: 1px solid black;
   position: relative;
   padding: 0.1em;
@@ -52,6 +51,18 @@ h1 {
   -ms-user-select: none;
   user-select: none;
   outline: 0;
+}
+
+#gap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  gap: 1px;
+  background-color: transparent;
 }
 
 /* Class to show and hide grid lines */
