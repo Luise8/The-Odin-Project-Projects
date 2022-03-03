@@ -33,13 +33,53 @@ window.addEventListener("mouseup", () => {
 });
 
 containerSheet.addEventListener("mousedown", (event) => {
-  /*   if (!event.target.classList.contains("row-container")) {
-    event.relatedTarget.style.backgroundColor = inputColor.value;
-  } */ //Gap Problem
   if (event.target.classList.contains("row-container")) {
     event.target.style.backgroundColor = inputColor.value;
   }
-  console.log(event.target);
+
+  // To resolve select target over gap problem
+  if (event.target.id == "container-sheet") {
+    if (
+      document
+        .elementFromPoint(event.clientX + 1, event.clientY)
+        .classList.contains("row-container")
+    ) {
+      document.elementFromPoint(
+        event.clientX + 1,
+        event.clientY
+      ).style.backgroundColor = inputColor.value;
+    } else if (
+      document
+        .elementFromPoint(event.clientX - 1, event.clientY)
+        .classList.contains("row-container")
+    ) {
+      document.elementFromPoint(
+        event.clientX - 1,
+        event.clientY
+      ).style.backgroundColor = inputColor.value;
+    } else if (
+      document
+        .elementFromPoint(event.clientX, event.clientY + 1)
+        .classList.contains("row-container")
+    ) {
+      document.elementFromPoint(
+        event.clientX,
+        event.clientY + 1
+      ).style.backgroundColor = inputColor.value;
+    } else if (
+      document
+        .elementFromPoint(event.clientX, event.clientY - 1)
+        .classList.contains("row-container")
+    ) {
+      document.elementFromPoint(
+        event.clientX,
+        event.clientY - 1
+      ).style.backgroundColor = inputColor.value;
+    }
+  }
+  /*   console.log(event.clientX);
+  document.elementFromPoint(event.clientX + 1, 29).style.backgroundColor =
+    "red"; */
   mouseDown = true;
 });
 containerSheet.addEventListener("mouseover", (event) => {
