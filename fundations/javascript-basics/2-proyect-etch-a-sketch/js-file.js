@@ -35,6 +35,8 @@ window.addEventListener("mouseup", () => {
 containerSheet.addEventListener("mousedown", (event) => {
   if (event.target.classList.contains("row-container")) {
     event.target.style.backgroundColor = inputColor.value;
+    mouseDown = true;
+    return;
   }
 
   // To resolve select target over gap problem
@@ -76,18 +78,37 @@ containerSheet.addEventListener("mousedown", (event) => {
         event.clientY - 1
       ).style.backgroundColor = inputColor.value;
     }
+    mouseDown = true;
   }
-  /*   console.log(event.clientX);
-  document.elementFromPoint(event.clientX + 1, 29).style.backgroundColor =
-    "red"; */
-  mouseDown = true;
 });
+
 containerSheet.addEventListener("mouseover", (event) => {
   if (mouseDown && event.target.classList.contains("row-container")) {
     event.target.style.backgroundColor = inputColor.value;
   }
 });
 
+// Clear all divs sheet to white
+const butttonClear = document.querySelector("#clear");
+butttonClear.addEventListener("click", clearSheet);
+function clearSheet() {
+  rowContainer.forEach((element) => {
+    element.style.backgroundColor = "#fff";
+  });
+}
+
+// Modes to draw
+/* let modeToDraw = "colorMode";
+const containerControls = document.querySelector("#container-controls");
+containerControls.addEventListener("click", (e) => {
+  console.log(e.target.id);
+}); */
+// Erase mode
+/* const eraserMode = document.querySelector("#eraser-mode");
+eraserMode.addEventListener("click", eraser);
+function eraser() {
+  
+} */
 /* function drawDivs() {
   rowContainer.forEach((square) => {
         square.addEventListener("mousedown", () => {
@@ -108,6 +129,7 @@ drawDivs();
 containerSheet.addEventListener("click"; (event) => {
   event.target.
 }) */
+
 // Update dynamically size of sheet
 sizeSheet.addEventListener("change", (e) => {
   rowContainer.forEach((element) => {
