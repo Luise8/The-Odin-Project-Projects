@@ -4,7 +4,8 @@
         Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your html file! */
 
 // Create number of divs
-const containerSheet = document.querySelector("#container-sheet");
+let containerTest = document.querySelector("#containerTest");
+let containerSheet = document.querySelector("#container-sheet");
 let rowContainer;
 // Function that create the row-containers
 function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
@@ -32,61 +33,64 @@ window.addEventListener("mouseup", () => {
   mouseDown = false;
 });
 
-containerSheet.addEventListener("mousedown", (event) => {
-  if (event.target.classList.contains("row-container")) {
-    event.target.style.backgroundColor = inputColor.value;
-    mouseDown = true;
-    return;
-  }
-
-  // To resolve select target over gap problem
-  if (event.target.id == "container-sheet") {
-    if (
-      document
-        .elementFromPoint(event.clientX + 1, event.clientY)
-        .classList.contains("row-container")
-    ) {
-      document.elementFromPoint(
-        event.clientX + 1,
-        event.clientY
-      ).style.backgroundColor = inputColor.value;
-    } else if (
-      document
-        .elementFromPoint(event.clientX - 1, event.clientY)
-        .classList.contains("row-container")
-    ) {
-      document.elementFromPoint(
-        event.clientX - 1,
-        event.clientY
-      ).style.backgroundColor = inputColor.value;
-    } else if (
-      document
-        .elementFromPoint(event.clientX, event.clientY + 1)
-        .classList.contains("row-container")
-    ) {
-      document.elementFromPoint(
-        event.clientX,
-        event.clientY + 1
-      ).style.backgroundColor = inputColor.value;
-    } else if (
-      document
-        .elementFromPoint(event.clientX, event.clientY - 1)
-        .classList.contains("row-container")
-    ) {
-      document.elementFromPoint(
-        event.clientX,
-        event.clientY - 1
-      ).style.backgroundColor = inputColor.value;
+function drawing() {
+  containerSheet.addEventListener("mousedown", (event) => {
+    if (event.target.classList.contains("row-container")) {
+      event.target.style.backgroundColor = inputColor.value;
+      mouseDown = true;
+      return;
     }
-    mouseDown = true;
-  }
-});
 
-containerSheet.addEventListener("mouseover", (event) => {
-  if (mouseDown && event.target.classList.contains("row-container")) {
-    event.target.style.backgroundColor = inputColor.value;
-  }
-});
+    // To resolve select target over gap problem
+    if (event.target.id == "container-sheet") {
+      if (
+        document
+          .elementFromPoint(event.clientX + 1, event.clientY)
+          .classList.contains("row-container")
+      ) {
+        document.elementFromPoint(
+          event.clientX + 1,
+          event.clientY
+        ).style.backgroundColor = inputColor.value;
+      } else if (
+        document
+          .elementFromPoint(event.clientX - 1, event.clientY)
+          .classList.contains("row-container")
+      ) {
+        document.elementFromPoint(
+          event.clientX - 1,
+          event.clientY
+        ).style.backgroundColor = inputColor.value;
+      } else if (
+        document
+          .elementFromPoint(event.clientX, event.clientY + 1)
+          .classList.contains("row-container")
+      ) {
+        document.elementFromPoint(
+          event.clientX,
+          event.clientY + 1
+        ).style.backgroundColor = inputColor.value;
+      } else if (
+        document
+          .elementFromPoint(event.clientX, event.clientY - 1)
+          .classList.contains("row-container")
+      ) {
+        document.elementFromPoint(
+          event.clientX,
+          event.clientY - 1
+        ).style.backgroundColor = inputColor.value;
+      }
+      mouseDown = true;
+    }
+  });
+
+  containerSheet.addEventListener("mouseover", (event) => {
+    if (mouseDown && event.target.classList.contains("row-container")) {
+      event.target.style.backgroundColor = inputColor.value;
+    }
+  });
+}
+drawing();
 
 // Clear all divs sheet to white
 const butttonClear = document.querySelector("#clear");
@@ -97,6 +101,13 @@ function clearSheet() {
   });
 }
 
+/* const colorMode = document.querySelector("#color-mode");
+colorMode.addEventListener("click", () => { 
+
+  console.log(containerSheet);
+});*/
+/* const rainbowMode = document.querySelector("#rainbow-mode");
+rainbowMode.addEventListener("click", () => {}); */
 // Modes to draw
 /* let modeToDraw = "colorMode";
 const containerControls = document.querySelector("#container-controls");
@@ -132,9 +143,13 @@ containerSheet.addEventListener("click"; (event) => {
 
 // Update dynamically size of sheet
 sizeSheet.addEventListener("change", (e) => {
-  rowContainer.forEach((element) => {
-    element.remove();
-  });
+  containerTest.removeChild(containerSheet);
+  containerSheet = document.createElement("div");
+  containerSheet.setAttribute("id", "container-sheet");
+  containerSheet.setAttribute("class", "grid-lines");
+  containerTest.appendChild(containerSheet);
+  drawing();
+
   createAndAddElements(e.target.value, containerSheet, "row-container");
   rowContainer = document.querySelectorAll(".row-container");
   containerSheet.style.gridTemplate = `repeat(${e.target.value}, 1fr) / repeat(${e.target.value}, 1fr)`;
