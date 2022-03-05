@@ -4,7 +4,7 @@
         Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your html file! */
 
 // Create number of divs
-let containerTest = document.querySelector("#containerTest");
+const containerSheetParent = document.querySelector("#container-sheet-parent");
 let containerSheet = document.querySelector("#container-sheet");
 let rowContainer;
 // Function that create the row-containers
@@ -143,11 +143,11 @@ containerSheet.addEventListener("click"; (event) => {
 
 // Update dynamically size of sheet
 sizeSheet.addEventListener("change", (e) => {
-  containerTest.removeChild(containerSheet);
+  containerSheetParent.removeChild(containerSheet);
   containerSheet = document.createElement("div");
   containerSheet.setAttribute("id", "container-sheet");
   containerSheet.setAttribute("class", "grid-lines");
-  containerTest.appendChild(containerSheet);
+  containerSheetParent.appendChild(containerSheet);
   drawing();
 
   createAndAddElements(e.target.value, containerSheet, "row-container");
