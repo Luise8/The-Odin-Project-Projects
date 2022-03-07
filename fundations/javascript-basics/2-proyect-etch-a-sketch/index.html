@@ -15,9 +15,11 @@
   <div id="content-mid">
     <div id="container-controls">
       <input type="color" name="" id="color" value="#000000">
-      <button id="color-mode">Color mode</button>
-      <button id="rainbow-mode">Rainbow mode</button>
-      <button id="eraser-mode">Eraser</button>
+      <div id="buttonContainer">
+        <button id="color-mode" class="buttonSelected">Color mode</button>
+        <button id="rainbow-mode">Rainbow mode</button>
+        <button value="#fff" id="eraser-mode">Eraser</button>
+      </div>
       <button id="clear">Clear</button>
       <input id="size-sheet" type="range" name="" id="" min="1" max="64" value="16">
       <p id="size-value">16 x 16</p>

@@ -30,9 +30,17 @@ h1 {
   flex-direction: column;
 }
 
+#buttonContainer {
+  display: flex;
+  flex-direction: column;
+}
 #color,
 #size-value {
   margin: 0 auto;
+}
+.buttonSelected {
+  background-color: #555;
+  border: #ccc;
 }
 
 #container-sheet {

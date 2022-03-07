@@ -16,6 +16,9 @@ function createAndAddElements(numberOfElments, parentElement, ...classesNames) {
   }
 }
 
+// Controls
+const buttonContainer = document.querySelector("#buttonContainer");
+
 // Select items to update and show the size of sheet dynamically
 createAndAddElements(16, containerSheet, "row-container");
 rowContainer = document.querySelectorAll(".row-container");
@@ -36,7 +39,7 @@ window.addEventListener("mouseup", () => {
 function drawing() {
   containerSheet.addEventListener("mousedown", (event) => {
     if (event.target.classList.contains("row-container")) {
-      event.target.style.backgroundColor = inputColor.value;
+      event.target.style.backgroundColor = modeSelected;
       mouseDown = true;
       return;
     }
@@ -51,7 +54,7 @@ function drawing() {
         document.elementFromPoint(
           event.clientX + 1,
           event.clientY
-        ).style.backgroundColor = inputColor.value;
+        ).style.backgroundColor = modeSelected;
       } else if (
         document
           .elementFromPoint(event.clientX - 1, event.clientY)
@@ -60,7 +63,7 @@ function drawing() {
         document.elementFromPoint(
           event.clientX - 1,
           event.clientY
-        ).style.backgroundColor = inputColor.value;
+        ).style.backgroundColor = modeSelected;
       } else if (
         document
           .elementFromPoint(event.clientX, event.clientY + 1)
@@ -69,7 +72,7 @@ function drawing() {
         document.elementFromPoint(
           event.clientX,
           event.clientY + 1
-        ).style.backgroundColor = inputColor.value;
+        ).style.backgroundColor = modeSelected;
       } else if (
         document
           .elementFromPoint(event.clientX, event.clientY - 1)
@@ -78,7 +81,7 @@ function drawing() {
         document.elementFromPoint(
           event.clientX,
           event.clientY - 1
-        ).style.backgroundColor = inputColor.value;
+        ).style.backgroundColor = modeSelected;
       }
       mouseDown = true;
     }
@@ -86,7 +89,7 @@ function drawing() {
 
   containerSheet.addEventListener("mouseover", (event) => {
     if (mouseDown && event.target.classList.contains("row-container")) {
-      event.target.style.backgroundColor = inputColor.value;
+      event.target.style.backgroundColor = modeSelected;
     }
   });
 }
@@ -101,11 +104,37 @@ function clearSheet() {
   });
 }
 
-/* const colorMode = document.querySelector("#color-mode");
-colorMode.addEventListener("click", () => { 
+// Controls of modes to draw
+// Update colorMode
+const colorMode = document.querySelector("#color-mode");
+colorMode.value = "#000";
+inputColor.addEventListener("input", (e) => {
+  console.log(e.target.value);
+  colorMode.value = e.target.value;
+  if (colorMode.classList.contains("buttonSelected")) {
+    modeSelected = e.target.value;
+  }
+});
 
-  console.log(containerSheet);
-});*/
+let modeSelected = inputColor.value;
+const buttons = buttonContainer.children;
+buttonContainer.addEventListener("click", (e) => {
+  modeSelected = e.target.value;
+  for (let i = 0; i < buttons.length; i++) {
+    if (
+      buttons[i].id === e.target.id &&
+      !buttons[i].classList.contains("buttonSelected")
+    ) {
+      buttons[i].classList.add("buttonSelected");
+    } else if (
+      buttons[i].id !== e.target.id &&
+      buttons[i].classList.contains("buttonSelected")
+    ) {
+      buttons[i].classList.remove("buttonSelected");
+    }
+  }
+});
+
 /* const rainbowMode = document.querySelector("#rainbow-mode");
 rainbowMode.addEventListener("click", () => {}); */
 // Modes to draw
