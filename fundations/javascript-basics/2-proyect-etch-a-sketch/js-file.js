@@ -27,8 +27,6 @@ sizeSheet.value = "16";
 const sizeValue = document.querySelector("#size-value");
 
 // Aplly color selected on div selected
-let inputColor = document.querySelector("#color");
-inputColor.value = "#000";
 
 // Drawing when hold down mouse javascript event
 let mouseDown = false;
@@ -39,7 +37,11 @@ window.addEventListener("mouseup", () => {
 function drawing() {
   containerSheet.addEventListener("mousedown", (event) => {
     if (event.target.classList.contains("row-container")) {
-      event.target.style.backgroundColor = modeSelected;
+      event.target.style.cssText =
+        buttonSelected === "rainbow-mode"
+          ? buttonsModes[buttonSelected]()
+          : buttonsModes[buttonSelected];
+
       mouseDown = true;
       return;
     }
@@ -54,7 +56,10 @@ function drawing() {
         document.elementFromPoint(
           event.clientX + 1,
           event.clientY
-        ).style.backgroundColor = modeSelected;
+        ).style.cssText =
+          buttonSelected === "rainbow-mode"
+            ? buttonsModes[buttonSelected]()
+            : buttonsModes[buttonSelected];
       } else if (
         document
           .elementFromPoint(event.clientX - 1, event.clientY)
@@ -63,7 +68,10 @@ function drawing() {
         document.elementFromPoint(
           event.clientX - 1,
           event.clientY
-        ).style.backgroundColor = modeSelected;
+        ).style.cssText =
+          buttonSelected === "rainbow-mode"
+            ? buttonsModes[buttonSelected]()
+            : buttonsModes[buttonSelected];
       } else if (
         document
           .elementFromPoint(event.clientX, event.clientY + 1)
@@ -72,7 +80,10 @@ function drawing() {
         document.elementFromPoint(
           event.clientX,
           event.clientY + 1
-        ).style.backgroundColor = modeSelected;
+        ).style.cssText =
+          buttonSelected === "rainbow-mode"
+            ? buttonsModes[buttonSelected]()
+            : buttonsModes[buttonSelected];
       } else if (
         document
           .elementFromPoint(event.clientX, event.clientY - 1)
@@ -81,7 +92,10 @@ function drawing() {
         document.elementFromPoint(
           event.clientX,
           event.clientY - 1
-        ).style.backgroundColor = modeSelected;
+        ).style.cssText =
+          buttonSelected === "rainbow-mode"
+            ? buttonsModes[buttonSelected]()
+            : buttonsModes[buttonSelected];
       }
       mouseDown = true;
     }
@@ -89,7 +103,10 @@ function drawing() {
 
   containerSheet.addEventListener("mouseover", (event) => {
     if (mouseDown && event.target.classList.contains("row-container")) {
-      event.target.style.backgroundColor = modeSelected;
+      event.target.style.cssText =
+        buttonSelected === "rainbow-mode"
+          ? buttonsModes[buttonSelected]()
+          : buttonsModes[buttonSelected];
     }
   });
 }
@@ -104,39 +121,63 @@ function clearSheet() {
   });
 }
 
-// Controls of modes to draw
-// Update colorMode
-const colorMode = document.querySelector("#color-mode");
-colorMode.value = "#000";
-inputColor.addEventListener("input", (e) => {
-  console.log(e.target.value);
-  colorMode.value = e.target.value;
-  if (colorMode.classList.contains("buttonSelected")) {
-    modeSelected = e.target.value;
-  }
-});
+// Color input
+const inputColor = document.querySelector("#color");
+inputColor.value = "#000";
 
-let modeSelected = inputColor.value;
-const buttons = buttonContainer.children;
+// function to rainbow-mode can work
+function randomColor() {
+  let rgbRed = Math.floor(Math.random() * 256);
+  let rgbGreen = Math.floor(Math.random() * 256);
+  let rgbBlue = Math.floor(Math.random() * 256);
+  let color = `background-color: rgb(${rgbRed}, ${rgbGreen}, ${rgbBlue})`;
+  return color;
+}
+
+let test = 0.0;
+
+/* function darkenUp {
+  return event.target.style.filter !== brightness(1) || event.target.style.filter !== brightness(100 %) ? "brightness(" += 0.1;
+} */
+// To apply mode to draw to divs
+const buttonsModes = {
+  "color-mode": `background-color: ${inputColor.value}`,
+  "rainbow-mode": randomColor,
+  "eraser-mode": `background-color: #fff`,
+  "darken-mode": `filter: brightness(0.1)`,
+};
+let buttonSelected = "color-mode";
+
+// Controls of modes to draw
 buttonContainer.addEventListener("click", (e) => {
-  modeSelected = e.target.value;
-  for (let i = 0; i < buttons.length; i++) {
+  buttonSelected = e.target.id;
+
+  for (let i = 0; i < buttonContainer.children.length; i++) {
     if (
-      buttons[i].id === e.target.id &&
-      !buttons[i].classList.contains("buttonSelected")
+      buttonContainer.children[i].id === e.target.id &&
+      !buttonContainer.children[i].classList.contains("buttonSelected")
     ) {
-      buttons[i].classList.add("buttonSelected");
+      buttonContainer.children[i].classList.add("buttonSelected");
     } else if (
-      buttons[i].id !== e.target.id &&
-      buttons[i].classList.contains("buttonSelected")
+      buttonContainer.children[i].id !== e.target.id &&
+      buttonContainer.children[i].classList.contains("buttonSelected")
     ) {
-      buttons[i].classList.remove("buttonSelected");
+      buttonContainer.children[i].classList.remove("buttonSelected");
     }
   }
 });
 
-/* const rainbowMode = document.querySelector("#rainbow-mode");
-rainbowMode.addEventListener("click", () => {}); */
+// Update color-mode
+inputColor.addEventListener("change", (e) => {
+  console.log(e.target.value);
+  buttonsModes["color-mode"] = `background-color: ${e.target.value}`;
+});
+
+/*
+rainbowMode.addEventListener("click", () => {
+  while (rainbowMode.classList.contains("buttonSelected")) {
+    selected; 
+});*/
 // Modes to draw
 /* let modeToDraw = "colorMode";
 const containerControls = document.querySelector("#container-controls");
