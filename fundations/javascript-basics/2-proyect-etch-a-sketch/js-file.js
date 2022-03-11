@@ -36,68 +36,70 @@ window.addEventListener("mouseup", () => {
 
 function drawing() {
   containerSheet.addEventListener("mousedown", (event) => {
-    if (event.target.classList.contains("row-container")) {
-      event.target.style.cssText =
-        buttonSelected === "rainbow-mode"
-          ? buttonsModes[buttonSelected]()
-          : buttonsModes[buttonSelected];
+    if (event.button === 0) {
+      if (event.target.classList.contains("row-container")) {
+        event.target.style.cssText =
+          buttonSelected === "rainbow-mode"
+            ? buttonsModes[buttonSelected]()
+            : buttonsModes[buttonSelected];
 
-      mouseDown = true;
-      return;
-    }
-
-    // To resolve select target over gap problem
-    if (event.target.id == "container-sheet") {
-      if (
-        document
-          .elementFromPoint(event.clientX + 1, event.clientY)
-          .classList.contains("row-container")
-      ) {
-        document.elementFromPoint(
-          event.clientX + 1,
-          event.clientY
-        ).style.cssText =
-          buttonSelected === "rainbow-mode"
-            ? buttonsModes[buttonSelected]()
-            : buttonsModes[buttonSelected];
-      } else if (
-        document
-          .elementFromPoint(event.clientX - 1, event.clientY)
-          .classList.contains("row-container")
-      ) {
-        document.elementFromPoint(
-          event.clientX - 1,
-          event.clientY
-        ).style.cssText =
-          buttonSelected === "rainbow-mode"
-            ? buttonsModes[buttonSelected]()
-            : buttonsModes[buttonSelected];
-      } else if (
-        document
-          .elementFromPoint(event.clientX, event.clientY + 1)
-          .classList.contains("row-container")
-      ) {
-        document.elementFromPoint(
-          event.clientX,
-          event.clientY + 1
-        ).style.cssText =
-          buttonSelected === "rainbow-mode"
-            ? buttonsModes[buttonSelected]()
-            : buttonsModes[buttonSelected];
-      } else if (
-        document
-          .elementFromPoint(event.clientX, event.clientY - 1)
-          .classList.contains("row-container")
-      ) {
-        document.elementFromPoint(
-          event.clientX,
-          event.clientY - 1
-        ).style.cssText =
-          buttonSelected === "rainbow-mode"
-            ? buttonsModes[buttonSelected]()
-            : buttonsModes[buttonSelected];
+        mouseDown = true;
+        return;
       }
-      mouseDown = true;
+
+      // To resolve select target over gap problem
+      if (event.target.id == "container-sheet") {
+        if (
+          document
+            .elementFromPoint(event.clientX + 1, event.clientY)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX + 1,
+            event.clientY
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX - 1, event.clientY)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX - 1,
+            event.clientY
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX, event.clientY + 1)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX,
+            event.clientY + 1
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX, event.clientY - 1)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX,
+            event.clientY - 1
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        }
+        mouseDown = true;
+      }
     }
   });
 
@@ -134,7 +136,7 @@ function randomColor() {
   return color;
 }
 
-let test = 0.0;
+let test = 0.9;
 
 /* function darkenUp {
   return event.target.style.filter !== brightness(1) || event.target.style.filter !== brightness(100 %) ? "brightness(" += 0.1;
@@ -144,7 +146,7 @@ const buttonsModes = {
   "color-mode": `background-color: ${inputColor.value}`,
   "rainbow-mode": randomColor,
   "eraser-mode": `background-color: #fff`,
-  "darken-mode": `filter: brightness(0.1)`,
+  "darken-mode": `filter: brightness(${(test -= 0.1)})`,
 };
 let buttonSelected = "color-mode";
 
