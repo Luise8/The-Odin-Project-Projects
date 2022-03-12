@@ -136,18 +136,13 @@ function randomColor() {
   return color;
 }
 
-let test = 0.9;
-
-/* function darkenUp {
-  return event.target.style.filter !== brightness(1) || event.target.style.filter !== brightness(100 %) ? "brightness(" += 0.1;
-} */
 // To apply mode to draw to divs
 const buttonsModes = {
   "color-mode": `background-color: ${inputColor.value}`,
   "rainbow-mode": randomColor,
   "eraser-mode": `background-color: #fff`,
-  "darken-mode": `filter: brightness(${(test -= 0.1)})`,
 };
+
 let buttonSelected = "color-mode";
 
 // Controls of modes to draw
@@ -171,7 +166,6 @@ buttonContainer.addEventListener("click", (e) => {
 
 // Update color-mode
 inputColor.addEventListener("change", (e) => {
-  console.log(e.target.value);
   buttonsModes["color-mode"] = `background-color: ${e.target.value}`;
 });
 

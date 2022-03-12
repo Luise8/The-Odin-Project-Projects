@@ -1,12 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap");
+
 :root {
-  --background: rgba(118, 183, 221);
+  --background: rgb(115, 175, 209);
   --sheet: rgb(189, 189, 189);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-color: #222;
 }
 * {
   margin: 0;
   padding: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -18,7 +22,9 @@ body {
   flex-direction: column;
 }
 h1 {
-  font-size: 50px;
+  font-size: 60px;
+  font-family: "Nunito", sans-serif;
+  color: var(--font-color);
 }
 #content-mid {
   display: flex;
@@ -28,19 +34,32 @@ h1 {
 #container-controls {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 #buttonContainer {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
+#container-controls button {
+  border-radius: 10px;
+  border: 2px solid #222;
+  background-color: #ccc;
+  color: var(--font-color);
+}
+
+#container-controls button:hover {
+  color: rgb(64, 15, 156);
+}
+
 #color,
 #size-value {
   margin: 0 auto;
 }
-.buttonSelected {
+#container-controls .buttonSelected {
   background-color: #555;
-  border: #ccc;
+  color: rgb(201, 201, 201);
 }
 
 #container-sheet {
@@ -49,7 +68,7 @@ h1 {
   display: grid;
   background-color: var(--sheet);
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  border: 1px solid black;
+  border: 1px solid #222;
   position: relative;
   padding: 0.1em;
   -webkit-touch-callout: none;
@@ -67,7 +86,7 @@ h1 {
 }
 
 .row-container {
-  background-color: white;
+  background-color: #fff;
 }
 
 /* RESPONSIVE FOR BIG SCREEN */
