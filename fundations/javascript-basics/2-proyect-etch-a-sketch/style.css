@@ -29,6 +29,7 @@ h1 {
 #content-mid {
   display: flex;
   gap: 50px;
+  flex-wrap: nowrap;
 }
 
 #container-controls {
@@ -117,5 +118,29 @@ h1 {
     width: 1500px;
     height: 1500px;
     flex: 1;
+  }
+}
+
+/* Tablet screen */
+@media (max-width: 768px) {
+  #content-mid {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 3px;
+  }
+  #container-sheet {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+/* Smartphone screen */
+@media (max-width: 425px) {
+  #container-sheet {
+    width: 90vw;
+    height: 90vw;
+  }
+  h1 {
+    font-size: 40px;
   }
 }
