@@ -97,6 +97,54 @@ function drawing() {
             buttonSelected === "rainbow-mode"
               ? buttonsModes[buttonSelected]()
               : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX - 1, event.clientY - 1)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX - 1,
+            event.clientY - 1
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX - 1, event.clientY + 1)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX - 1,
+            event.clientY + 1
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX + 1, event.clientY + 1)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX + 1,
+            event.clientY + 1
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
+        } else if (
+          document
+            .elementFromPoint(event.clientX + 1, event.clientY - 1)
+            .classList.contains("row-container")
+        ) {
+          document.elementFromPoint(
+            event.clientX + 1,
+            event.clientY - 1
+          ).style.cssText =
+            buttonSelected === "rainbow-mode"
+              ? buttonsModes[buttonSelected]()
+              : buttonsModes[buttonSelected];
         }
         mouseDown = true;
       }
