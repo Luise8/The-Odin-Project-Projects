@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap");
 
 :root {
-  --background: rgb(186, 163, 201);
+  --background: #b8c8db;
   --sheet: rgb(189, 189, 189);
   --font-color: #222;
 }
@@ -132,7 +132,7 @@ h1 {
   #content-mid {
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 3px;
+    gap: 10px;
   }
   #container-sheet {
     width: 80vw;
