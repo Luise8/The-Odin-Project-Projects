@@ -14,7 +14,6 @@
 }
 
 body {
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,8 +154,8 @@ h1 {
 
 /* Smartphone screen */
 @media (max-width: 425px) {
-  body {
-    padding-bottom: 15px;
+  #content-mid {
+    margin-bottom: 30px;
   }
   #container-sheet {
     width: 90vw;
