@@ -138,6 +138,19 @@ h1 {
     width: 80vw;
     height: 80vw;
   }
+  /* To fix the bug that causes the hover that makes the buttons stay pressed with the hover applied in responsie screens  */
+  #container-controls button:hover {
+    color: var(--font-color);
+  }
+  #container-controls .buttonSelected:hover {
+    color: rgb(201, 201, 201);
+  }
+  #container-controls button:active {
+    color: rgb(64, 15, 156);
+  }
+  #container-controls .buttonSelected:active {
+    color: rgb(64, 15, 156);
+  }
 }
 
 /* Smartphone screen */
