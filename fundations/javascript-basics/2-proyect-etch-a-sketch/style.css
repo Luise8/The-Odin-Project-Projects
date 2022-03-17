@@ -155,6 +155,9 @@ h1 {
 
 /* Smartphone screen */
 @media (max-width: 425px) {
+  body {
+    padding-bottom: 15px;
+  }
   #container-sheet {
     width: 90vw;
     height: 90vw;
