@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap");
+
+:root {
+  --background: #b8c8db;
+  --sheet: rgb(189, 189, 189);
+  --font-color: #222;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  flex-direction: column;
+}
+h1 {
+  font-size: 60px;
+  font-family: "Nunito", sans-serif;
+  color: var(--font-color);
+  cursor: context-menu;
+}
+#content-mid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+#container-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#container-controls button {
+  border-radius: 10px;
+  border: 2px solid #222;
+  background-color: #ccc;
+  color: var(--font-color);
+}
+
+#container-controls button:hover {
+  color: rgb(64, 15, 156);
+}
+#container-controls button,
+#container-controls input {
+  cursor: url("images/arrow11.png"), pointer;
+}
+
+#color,
+#size-value {
+  margin: 0 auto;
+}
+#container-controls .buttonSelected {
+  background-color: #555;
+  color: rgb(201, 201, 201);
+}
+#container-controls #color {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border: 2px solid #222;
+  text-align: center;
+}
+
+#container-sheet {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  background-color: var(--sheet);
+  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
+  border: 1px solid #222;
+  position: relative;
+  padding: 0.1em;
+  cursor: crosshair;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0;
+}
+
+/* Class to show and hide grid lines */
+.grid-lines {
+  gap: 1px;
+}
+
+.row-container {
+  background-color: #fff;
+}
+
+/* RESPONSIVE FOR BIG SCREEN */
+@media (min-width: 1400px) {
+  .grid-lines {
+    gap: 0.2em;
+  }
+  #container-sheet {
+    width: 1000px;
+    height: 1000px;
+    flex: 1;
+  }
+}
+
+@media (min-width: 2000px) {
+  .grid-lines {
+    gap: 0.4999em;
+  }
+  #container-sheet {
+    width: 1500px;
+    height: 1500px;
+    flex: 1;
+  }
+}
+
+/* Tablet screen */
+@media (max-width: 768px) {
+  #content-mid {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #container-sheet {
+    width: 80vw;
+    height: 80vw;
+  }
+  /* To fix the bug that causes the hover that makes the buttons stay pressed with the hover applied in responsie screens  */
+  #container-controls button:hover {
+    color: var(--font-color);
+  }
+  #container-controls .buttonSelected:hover {
+    color: rgb(201, 201, 201);
+  }
+  #container-controls button:active {
+    color: rgb(64, 15, 156);
+  }
+  #container-controls .buttonSelected:active {
+    color: rgb(64, 15, 156);
+  }
+}
+
+/* Smartphone screen */
+@media (max-width: 425px) {
+  #content-mid {
+    margin-bottom: 30px;
+  }
+  #container-sheet {
+    width: 90vw;
+    height: 90vw;
+  }
+  h1 {
+    font-size: 50px;
+  }
+}
