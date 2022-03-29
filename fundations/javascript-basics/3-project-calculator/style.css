@@ -1,0 +1,14 @@
+:root {
+  --background: #f3767c;
+  --calculator-backgroundC: #2b2a2d;
+  --font-color: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+}
