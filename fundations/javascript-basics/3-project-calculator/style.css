@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  gap: 5.741% /* 24px */;
+  gap: calc(var(--height-calculator-start) * 5.741 / 100);
   width: var(--width-calculator-start);
   height: var(--height-calculator-start);
   padding: calc(6.459 * var(--height-calculator-start) / 100)
@@ -65,10 +65,36 @@ body {
 }
 
 #calculator-btn {
-  display: flex;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: calc(var(--height-calculator-start) * 3.625 / 100);
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+}
+.btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
 }
 
+.top {
+  background-color: var(--btn-top-background-color);
+}
+
+.down {
+  background-color: var(--btn-down-background-color);
+}
+.equal {
+  background-color: var(--btn-equal-background-color);
+  grid-column: 4;
+  grid-row: 4 / span 2;
+}
 /* @media (min-width: 768px) {
   :root {
     --width-calculator-start: 500px;
