@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 :root {
   --background-color: #f3767c;
   --calculator-background-color: #2b2a2d;
@@ -52,8 +50,6 @@ body {
   color: var(--btn-top-background-color);
   padding: 2%;
   border: 1px solid #8d976a;
-  /* font-family: "Share Tech Mono", monospace; */
-  /* font-family: "Orbitron", sans-serif; */
   font-family: sans-serif;
   font-size: 1rem;
 }
@@ -100,6 +96,8 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--font-color);
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .top {
@@ -113,6 +111,11 @@ body {
   background-color: var(--btn-equal-background-color);
   grid-column: 4;
   grid-row: 4 / span 2;
+}
+
+.btn:hover {
+  border-bottom: solid 1px var(--font-color);
+  opacity: 0.7;
 }
 
 @media (min-width: 768px) {
