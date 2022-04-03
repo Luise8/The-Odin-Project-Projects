@@ -114,9 +114,10 @@ body {
   grid-column: 4;
   grid-row: 4 / span 2;
 }
+
 @media (min-width: 768px) {
   :root {
-    --width-calculator-start: 500px;
+    --width-calculator-start: 465px;
     --height-calculator-start: 600px;
     font-size: 30px;
   }
