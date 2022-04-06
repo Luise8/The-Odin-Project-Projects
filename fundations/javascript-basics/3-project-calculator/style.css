@@ -112,7 +112,6 @@ body {
   grid-column: 4;
   grid-row: 4 / span 2;
 }
-
 .btn:hover {
   border-bottom: solid 1px var(--font-color);
   opacity: 0.7;
@@ -123,5 +122,16 @@ body {
     --width-calculator-start: 465px;
     --height-calculator-start: 600px;
     font-size: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btn:hover {
+    border-bottom: none;
+    opacity: 1;
+  }
+  .btn:active {
+    border-bottom: solid 1px var(--font-color);
+    opacity: 0.7;
   }
 }
