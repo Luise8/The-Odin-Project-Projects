@@ -47,16 +47,17 @@ body {
   width: 100%;
   height: calc(18.375 * var(--height-calculator-start) / 100); /* 21.4%; */
   border-radius: 7%/17%;
-  color: var(--btn-top-background-color);
   padding: 2%;
   border: 1px solid #8d976a;
-  font-family: sans-serif;
-  font-size: 1rem;
 }
 
-#calculator-screen div {
+#calculator-screen .screen {
   display: flex;
   align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--btn-top-background-color);
+  font-family: sans-serif;
 }
 
 #result {
@@ -66,10 +67,12 @@ body {
 }
 #operator {
   height: 20%;
+  font-size: 1rem;
 }
 #current {
   height: 50%;
   justify-content: flex-end;
+  font-size: 1rem;
 }
 
 #current,
