@@ -76,6 +76,35 @@ function write(digit) {
   }
 }
 
+// Operators + - / * %
+operators.forEach((e) => {
+  // Only to negative symbol.
+  if (e.textContent == "-") {
+    e.addEventListener("click", () => {
+      // Write this if there are not anything in current.
+      if (current.value.length == 0) write(e.textContent);
+    });
+  }
+
+  e.addEventListener("click", () => {
+    if (
+      !check.operatorsCheck.includes(current.value) &&
+      current.value[current.value.length - 1] != "."
+    ) {
+      updateScreens(operation.value, e.textContent);
+    }
+  });
+});
+
+// Equal =
+equal.addEventListener("click", (e) => {
+  if (
+    !check.operatorsCheck.includes(current.value) &&
+    current.value[current.value.length - 1] != "."
+  )
+    updateScreens(operation.value, e.target.textContent);
+});
+
 // Object with functions
 const operator = {
   "+": (num1, num2) => {
