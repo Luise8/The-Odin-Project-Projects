@@ -99,3 +99,42 @@ const operator = {
     return (num1 * 100) / num2;
   },
 };
+
+// Function to update screen when is pressed a valid operation
+function updateScreens(operationSymbol, operationSymbolNew) {
+  if (current.value != "" && result.value != "") {
+    let resultOperation = operator[operationSymbol](
+      +result.value,
+      +current.value
+    );
+    if (operationSymbolNew == "=") {
+      current.value = resultOperation;
+      result.value = "";
+      operation.value = operationSymbolNew;
+      check.point = false;
+    } else {
+      result.value = resultOperation;
+      current.value = "0";
+      operation.value = operationSymbolNew;
+      check.point = false;
+    }
+  } else if (
+    current.value != "" &&
+    result.value == "" &&
+    operationSymbolNew != "="
+  ) {
+    result.value = current.value;
+    current.value = "0";
+    operation.value = operationSymbolNew;
+    check.point = false;
+  } else if (
+    current.value == "" &&
+    result.value == "" &&
+    operationSymbolNew != "="
+  ) {
+    result.value = "0";
+    current.value = "0";
+    operation.value = operationSymbolNew;
+    check.point = false;
+  }
+}
