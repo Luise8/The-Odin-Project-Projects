@@ -4,34 +4,37 @@ const clearAll = document.querySelector(".clearAll");
 const point = document.querySelector(".point");
 const equal = document.querySelector(".equal");
 const operators = document.querySelectorAll(".operators");
+const deleteOneDigit = document.querySelector(".delete");
 
 // Screen parts
 const current = document.querySelector("#current");
 const operation = document.querySelector("#operator");
 const result = document.querySelector("#result");
 
-// Numbers
+// Write Numbers
 numbers.forEach((e) => {
   if (e.textContent == "0") {
     e.addEventListener("click", () => {
       if (current.value != "-0") {
-        current.value += e.textContent;
+        write(e.textContent);
       }
     });
   } else {
     e.addEventListener("click", () => {
-      current.value += e.textContent;
+      write(e.textContent);
     });
   }
 });
 
-// Point
+// Write Point
 point.addEventListener("click", (e) => {
-  if (!current.value.includes(".")) {
+  if (check.point == false) {
     if (current.value != "" && current.value != "-") {
-      current.value += e.target.textContent;
+      write(e.target.textContent);
+      check.point = true;
     } else if (current.value == "") {
-      current.value = "0.";
+      write("0.");
+      check.point = true;
     }
   }
 });
@@ -41,7 +44,14 @@ clearAll.addEventListener("click", () => {
   result.value = "";
   operation.value = "";
   current.value = "0";
+  check.point = false;
 });
+
+// Check point and operators
+const check = {
+  point: false,
+  operatorsCheck: [".", "0.", "-", "-0", "-0."],
+};
 
 // Delete function
 const deleteOneDigit = document.querySelector(".delete");
@@ -49,5 +59,20 @@ deleteOneDigit.addEventListener("click", () => {
   if (current.value.length > 0) {
     let deleteDigit = current.value[current.value.length - 1];
     current.value = current.value.slice(0, -1);
+    if ("." == deleteDigit) {
+      check.point = false;
+    }
   }
 });
+
+// Fucntion to write each sigle digit
+function write(digit) {
+  if (current.value.length < 20) {
+    // Check to replace zero if write a number
+    if (current.value == "0" && current.value.length == 1 && digit != ".") {
+      current.value = digit;
+    } else {
+      current.value += digit;
+    }
+  }
+}
