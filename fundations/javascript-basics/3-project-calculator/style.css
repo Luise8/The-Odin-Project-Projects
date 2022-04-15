@@ -61,16 +61,16 @@ body {
 }
 
 #result {
-  height: 30%;
+  height: 40%;
   justify-content: flex-end;
-  font-size: 0.7rem;
-}
-#operator {
-  height: 20%;
   font-size: 1rem;
 }
+#operator {
+  height: 30%;
+  font-size: 0.7rem;
+}
 #current {
-  height: 50%;
+  height: 40%;
   justify-content: flex-end;
   font-size: 1rem;
 }
@@ -101,6 +101,13 @@ body {
   color: var(--font-color);
   box-sizing: border-box;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0;
 }
 
 .top {
