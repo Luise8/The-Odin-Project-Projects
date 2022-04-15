@@ -54,7 +54,6 @@ const check = {
 };
 
 // Delete function
-const deleteOneDigit = document.querySelector(".delete");
 deleteOneDigit.addEventListener("click", () => {
   if (current.value.length > 0) {
     let deleteDigit = current.value[current.value.length - 1];
@@ -76,3 +75,27 @@ function write(digit) {
     }
   }
 }
+
+// Object with functions
+const operator = {
+  "+": (num1, num2) => {
+    return num1 + num2;
+  },
+  "-": (num1, num2) => {
+    return num1 - num2;
+  },
+  x: (num1, num2) => {
+    return num1 * num2;
+  },
+  "÷": (num1, num2) => {
+    if (num1 == "0" && num2 == "0") {
+      alert("Error, don't try to divide that");
+      return "0";
+    } else {
+      return num1 / num2;
+    }
+  },
+  "%": (num1, num2) => {
+    return (num1 * 100) / num2;
+  },
+};
