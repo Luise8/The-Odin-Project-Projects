@@ -60,23 +60,23 @@ body {
   font-family: sans-serif;
 }
 
-#result {
+#result-screen {
   height: 40%;
   justify-content: flex-end;
   font-size: 1rem;
 }
-#operator {
+#operator-screen {
   height: 30%;
   font-size: 0.7rem;
 }
-#current {
+#current-screen {
   height: 40%;
   justify-content: flex-end;
   font-size: 1rem;
 }
 
-#current,
-#result {
+#current-screen,
+#result-screen {
   text-align: right;
 }
 

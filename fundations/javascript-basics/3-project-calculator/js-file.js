@@ -7,15 +7,15 @@ const operators = document.querySelectorAll(".operators");
 const deleteOneDigit = document.querySelector(".delete");
 
 // Screen parts
-const current = document.querySelector("#current");
-const operation = document.querySelector("#operator");
-const result = document.querySelector("#result");
+const currentScreen = document.querySelector("#current-screen");
+const operationScreen = document.querySelector("#operator-screen");
+const resultScreen = document.querySelector("#result-screen");
 
 // Write Numbers
 numbers.forEach((e) => {
   if (e.textContent == "0") {
     e.addEventListener("click", () => {
-      if (current.value != "-0") {
+      if (currentScreen.value != "-0") {
         write(e.textContent);
       }
     });
@@ -29,10 +29,10 @@ numbers.forEach((e) => {
 // Write Point
 point.addEventListener("click", (e) => {
   if (check.point == false) {
-    if (current.value != "" && current.value != "-") {
+    if (currentScreen.value != "" && currentScreen.value != "-") {
       write(e.target.textContent);
       check.point = true;
-    } else if (current.value == "") {
+    } else if (currentScreen.value == "") {
       write("0.");
       check.point = true;
     }
@@ -41,9 +41,9 @@ point.addEventListener("click", (e) => {
 
 // AC button to clear all digits in all parts of screen
 clearAll.addEventListener("click", () => {
-  result.value = "";
-  operation.value = "";
-  current.value = "0";
+  resultScreen.value = "";
+  operationScreen.value = "";
+  currentScreen.value = "0";
   check.point = false;
 });
 
@@ -55,9 +55,9 @@ const check = {
 
 // Delete function
 deleteOneDigit.addEventListener("click", () => {
-  if (current.value.length > 0) {
-    let deleteDigit = current.value[current.value.length - 1];
-    current.value = current.value.slice(0, -1);
+  if (currentScreen.value.length > 0) {
+    let deleteDigit = currentScreen.value[currentScreen.value.length - 1];
+    currentScreen.value = currentScreen.value.slice(0, -1);
     if ("." == deleteDigit) {
       check.point = false;
     }
@@ -66,12 +66,16 @@ deleteOneDigit.addEventListener("click", () => {
 
 // Fucntion to write each sigle digit
 function write(digit) {
-  if (current.value.length < 20) {
+  if (currentScreen.value.length < 20) {
     // Check to replace zero if write a number
-    if (current.value == "0" && current.value.length == 1 && digit != ".") {
-      current.value = digit;
+    if (
+      currentScreen.value == "0" &&
+      currentScreen.value.length == 1 &&
+      digit != "."
+    ) {
+      currentScreen.value = digit;
     } else {
-      current.value += digit;
+      currentScreen.value += digit;
     }
   }
 }
@@ -81,17 +85,17 @@ operators.forEach((e) => {
   // Only to negative symbol.
   if (e.textContent == "-") {
     e.addEventListener("click", () => {
-      // Write this if there are not anything in current.
-      if (current.value.length == 0) write(e.textContent);
+      // Write this if there are not anything in currentScreen.
+      if (currentScreen.value.length == 0) write(e.textContent);
     });
   }
 
   e.addEventListener("click", () => {
     if (
-      !check.operatorsCheck.includes(current.value) &&
-      current.value[current.value.length - 1] != "."
+      !check.operatorsCheck.includes(currentScreen.value) &&
+      currentScreen.value[currentScreen.value.length - 1] != "."
     ) {
-      updateScreens(operation.value, e.textContent);
+      updateScreens(operationScreen.value, e.textContent);
     }
   });
 });
@@ -99,10 +103,10 @@ operators.forEach((e) => {
 // Equal =
 equal.addEventListener("click", (e) => {
   if (
-    !check.operatorsCheck.includes(current.value) &&
-    current.value[current.value.length - 1] != "."
+    !check.operatorsCheck.includes(currentScreen.value) &&
+    currentScreen.value[currentScreen.value.length - 1] != "."
   )
-    updateScreens(operation.value, e.target.textContent);
+    updateScreens(operationScreen.value, e.target.textContent);
 });
 
 // Object with functions
@@ -131,39 +135,39 @@ const operator = {
 
 // Function to update screen when is pressed a valid operation
 function updateScreens(operationSymbol, operationSymbolNew) {
-  if (current.value != "" && result.value != "") {
+  if (currentScreen.value != "" && resultScreen.value != "") {
     let resultOperation = operator[operationSymbol](
-      +result.value,
-      +current.value
+      +resultScreen.value,
+      +currentScreen.value
     );
     if (operationSymbolNew == "=") {
-      current.value = resultOperation;
-      result.value = "";
-      operation.value = operationSymbolNew;
+      currentScreen.value = resultOperation;
+      resultScreen.value = "";
+      operationScreen.value = operationSymbolNew;
       check.point = false;
     } else {
-      result.value = resultOperation;
-      current.value = "0";
-      operation.value = operationSymbolNew;
+      resultScreen.value = resultOperation;
+      currentScreen.value = "0";
+      operationScreen.value = operationSymbolNew;
       check.point = false;
     }
   } else if (
-    current.value != "" &&
-    result.value == "" &&
+    currentScreen.value != "" &&
+    resultScreen.value == "" &&
     operationSymbolNew != "="
   ) {
-    result.value = current.value;
-    current.value = "0";
-    operation.value = operationSymbolNew;
+    resultScreen.value = currentScreen.value;
+    currentScreen.value = "0";
+    operationScreen.value = operationSymbolNew;
     check.point = false;
   } else if (
-    current.value == "" &&
-    result.value == "" &&
+    currentScreen.value == "" &&
+    resultScreen.value == "" &&
     operationSymbolNew != "="
   ) {
-    result.value = "0";
-    current.value = "0";
-    operation.value = operationSymbolNew;
+    resultScreen.value = "0";
+    currentScreen.value = "0";
+    operationScreen.value = operationSymbolNew;
     check.point = false;
   }
 }
