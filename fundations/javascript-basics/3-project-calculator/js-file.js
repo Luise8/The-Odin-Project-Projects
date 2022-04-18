@@ -13,17 +13,9 @@ const resultScreen = document.querySelector("#result-screen");
 
 // Write Numbers
 numbers.forEach((e) => {
-  if (e.textContent == "0") {
-    e.addEventListener("click", () => {
-      if (currentScreen.value != "-0") {
-        write(e.textContent);
-      }
-    });
-  } else {
-    e.addEventListener("click", () => {
-      write(e.textContent);
-    });
-  }
+  e.addEventListener("click", () => {
+    if (currentScreen.value != "-0") write(e.textContent);
+  });
 });
 
 // Write Point
@@ -171,3 +163,34 @@ function updateScreens(operationSymbol, operationSymbolNew) {
     check.point = false;
   }
 }
+
+// Button Reference Keys
+const buttonReferenceKeys = {
+  Backspace: backspace,
+  Delete: clearAll,
+  ".": point,
+  0: numbers[9],
+  1: numbers[6],
+  2: numbers[7],
+  3: numbers[8],
+  4: numbers[3],
+  5: numbers[4],
+  6: numbers[5],
+  7: numbers[0],
+  8: numbers[1],
+  9: numbers[2],
+  "/": operators[0],
+  "*": operators[1],
+  "-": operators[2],
+  "+": operators[3],
+  "%": operators[4],
+  Enter: equal,
+};
+
+document.addEventListener("keydown", (event) => {
+  const keyName = event.key;
+  if (keyName in buttonReferenceKeys) {
+    buttonReferenceKeys[keyName].click();
+  }
+  console.log(keyName);
+});
