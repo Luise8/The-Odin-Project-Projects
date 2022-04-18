@@ -4,7 +4,7 @@ const clearAll = document.querySelector(".clearAll");
 const point = document.querySelector(".point");
 const equal = document.querySelector(".equal");
 const operators = document.querySelectorAll(".operators");
-const deleteOneDigit = document.querySelector(".delete");
+const backspace = document.querySelector(".backspace");
 
 // Screen parts
 const currentScreen = document.querySelector("#current-screen");
@@ -53,8 +53,8 @@ const check = {
   operatorsCheck: [".", "0.", "-", "-0", "-0."],
 };
 
-// Delete function
-deleteOneDigit.addEventListener("click", () => {
+// Backspace function
+backspace.addEventListener("click", () => {
   if (currentScreen.value.length > 0) {
     let deleteDigit = currentScreen.value[currentScreen.value.length - 1];
     currentScreen.value = currentScreen.value.slice(0, -1);
