@@ -113,9 +113,9 @@ const operator = {
     return num1 * num2;
   },
   "÷": (num1, num2) => {
-    if (num1 == "0" && num2 == "0") {
+    if (num2 == "0") {
       alert("Error, don't try to divide that");
-      return "0";
+      return "error";
     } else {
       return num1 / num2;
     }
@@ -132,11 +132,14 @@ function updateScreens(operationSymbol, operationSymbolNew) {
       +resultScreen.value,
       +currentScreen.value
     );
+    if (resultOperation == "error") {
+      return;
+    }
     if (operationSymbolNew == "=") {
       currentScreen.value = resultOperation;
       resultScreen.value = "";
       operationScreen.value = operationSymbolNew;
-      check.point = false;
+      check.point = currentScreen.value.includes(".") ? true : false;
     } else {
       resultScreen.value = resultOperation;
       currentScreen.value = "0";
