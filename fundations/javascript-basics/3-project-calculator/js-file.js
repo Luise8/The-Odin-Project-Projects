@@ -132,9 +132,13 @@ function updateScreens(operationSymbol, operationSymbolNew) {
       +resultScreen.value,
       +currentScreen.value
     );
+    // Check if the user tries to divide by 0
     if (resultOperation == "error") {
       return;
     }
+    // Check and correct if the result length is greater than 20 (maximum length for this calculator)
+    resultOperation = correctLength(resultOperation);
+
     if (operationSymbolNew == "=") {
       currentScreen.value = resultOperation;
       resultScreen.value = "";
@@ -190,10 +194,29 @@ const buttonReferenceKeys = {
   Enter: equal,
 };
 
+// Allow typing with corresponding keys
 document.addEventListener("keydown", (event) => {
   const keyName = event.key;
   if (keyName in buttonReferenceKeys) {
     buttonReferenceKeys[keyName].click();
   }
-  console.log(keyName);
 });
+
+// Function to correct the length of the number to less than 21 digits
+function correctLength(number) {
+  numberString = number.toString();
+  //
+  if (numberString.length > 20) {
+    if (
+      numberString.includes(".") &&
+      !numberString.includes("e") &&
+      Math.round(number).toString().length <= 20
+    ) {
+      return Math.round(number);
+    } else {
+      return number.toExponential(1);
+    }
+  } else {
+    return number;
+  }
+}
