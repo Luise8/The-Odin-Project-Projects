@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <General fullName="fullName" />
+        <General />
         <div className="centerContainer">
           <Personal />
           <div className="rightCenterContainer">
