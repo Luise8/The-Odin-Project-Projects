@@ -1,0 +1,12 @@
+.section-header {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-add-exp {
+  display: none;
+}
+
+.section-header:hover .btn-add-exp {
+  display: flex;
+}

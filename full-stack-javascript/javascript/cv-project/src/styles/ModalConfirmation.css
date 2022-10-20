@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.containerTwo {
+  background-color: aquamarine;
+  padding: 20px;
+  border: 1px solid rgb(41, 42, 44);
+}
+
+.containerTwo .contentBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.containerTwo button {
+  width: 100px;
+  height: 25px;
+}

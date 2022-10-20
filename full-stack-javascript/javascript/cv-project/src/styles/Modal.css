@@ -1,0 +1,20 @@
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.61);
+  display: none;
+}
+
+.active {
+  display: flex;
+}

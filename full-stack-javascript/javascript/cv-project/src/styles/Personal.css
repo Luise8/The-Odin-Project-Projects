@@ -1,0 +1,6 @@
+.containerSidebar {
+  display: flex;
+  background-color: red;
+  width: 20vw;
+  height: 100vh;
+}
