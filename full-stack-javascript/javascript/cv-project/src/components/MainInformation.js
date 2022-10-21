@@ -87,8 +87,8 @@ class MainInformation extends Component {
           inputsList={form.inputList}
           btnList={form.btnList}
           modalActive={isActive}
-          /*       btnTwoFunction={}
-      btnOneFunction={}
+          btnTwoFunction={this.handleToggle}
+          /*btnOneFunction={}
       onChange={} */
           stateInputValues={itemMainInformation}
         />
