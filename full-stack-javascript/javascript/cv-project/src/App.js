@@ -14,10 +14,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <General />
         <div className="centerContainer">
           <Personal />
           <div className="rightCenterContainer">
+            <General />
             <h2>Education</h2>
             <Experience />
           </div>
