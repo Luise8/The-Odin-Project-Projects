@@ -27,6 +27,17 @@ class MainInformation extends Component {
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this);
   }
+  changeItem = () => {};
+  onSubmitItem = () => {};
+  handleChange = () => {};
+  handleToggleDeleteAll = () => {};
+  clearAll = () => {};
+
+  handleToggle = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  };
 
   render() {
     const { isActive, itemMainInformation } = this.state;
