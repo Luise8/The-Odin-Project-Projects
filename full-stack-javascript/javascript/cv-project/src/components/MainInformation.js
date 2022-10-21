@@ -66,6 +66,15 @@ class MainInformation extends Component {
             DEFAULT RESTORE
           </button>
         </div>
+        <ModalForm
+          inputsList={form.inputList}
+          btnList={form.btnList}
+          modalActive={isActive}
+          /*       btnTwoFunction={}
+      btnOneFunction={}
+      onChange={} */
+          stateInputValues={itemMainInformation}
+        />
       </>
     );
   }
