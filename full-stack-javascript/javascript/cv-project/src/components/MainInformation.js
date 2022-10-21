@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
+import "../styles/MainInformation.css";
 
 class MainInformation extends Component {
   constructor() {
