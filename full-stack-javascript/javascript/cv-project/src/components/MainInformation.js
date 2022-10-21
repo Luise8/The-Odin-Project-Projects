@@ -20,6 +20,12 @@ class MainInformation extends Component {
       ],
       isActive: false, // Modal boolean
     };
+    this.changeItem = this.changeItem.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+    this.onSubmitItem = this.onSubmitItem.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
+    this.clearAll = this.clearAll.bind(this);
   }
 
   render() {
