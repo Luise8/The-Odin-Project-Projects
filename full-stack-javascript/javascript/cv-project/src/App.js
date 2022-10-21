@@ -14,9 +14,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="centerContainer">
+        <div className="main-container">
           <SecondaryInformation />
-          <div className="rightCenterContainer">
+          <div className="right-main-container">
             <MainInformation />
             <h2>Education</h2>
             <Experience />
