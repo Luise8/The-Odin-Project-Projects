@@ -1,3 +1,10 @@
+.container-main-information {
+  background-color: rgba(173, 85, 224, 0.87);
+}
+.container-main-information:hover .btn-main-inf {
+  display: flex;
+}
+
 .btn-main-inf {
   display: none;
 }
