@@ -1,6 +1,7 @@
 .container-main-information {
   background-color: rgba(173, 85, 224, 0.87);
   display: flex;
+  gap: 14px;
 }
 .container-main-information:hover .btn-main-inf {
   display: flex;
