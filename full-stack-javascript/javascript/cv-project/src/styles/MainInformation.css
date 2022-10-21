@@ -1,5 +1,6 @@
 .container-main-information {
   background-color: rgba(173, 85, 224, 0.87);
+  display: flex;
 }
 .container-main-information:hover .btn-main-inf {
   display: flex;
@@ -7,4 +8,5 @@
 
 .btn-main-inf {
   display: none;
+  height: 30px;
 }

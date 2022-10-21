@@ -54,9 +54,11 @@ class MainInformation extends Component {
     return (
       <>
         <div className="container-main-information">
-          <h1>{itemMainInformation[0].text}</h1>
-          <h2>{itemMainInformation[1].text}</h2>
-          <p>{itemMainInformation[2].text}</p>
+          <div>
+            <h1>{itemMainInformation[0].text}</h1>
+            <h2>{itemMainInformation[1].text}</h2>
+            <p>{itemMainInformation[2].text}</p>
+          </div>
           <button className="btn-main-inf" onClick={this.handleToggle}>
             EDIT
           </button>
