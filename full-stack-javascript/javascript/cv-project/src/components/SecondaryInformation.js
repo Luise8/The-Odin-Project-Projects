@@ -1,9 +1,9 @@
-// Personal.js
+// SecondaryInformation.js
 // This component has a CV app section
 import React, { Component } from "react";
-import "../styles/Personal.css";
+import "../styles/SecondaryInformation.css";
 
-class Personal extends Component {
+class SecondaryInformation extends Component {
   constructor(props) {
     super(props);
 
@@ -21,4 +21,4 @@ class Personal extends Component {
   }
 }
 
-export default Personal;
+export default SecondaryInformation;
