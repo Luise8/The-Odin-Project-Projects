@@ -43,10 +43,7 @@ class Experience extends Component {
   handleChange = (e) => {
     //e.target.getAttribute("")
     let item = [...this.state.expItem];
-    let inputSelected = {
-      ...item[e.target.dataset.indexStateValue].text,
-    };
-    inputSelected = e.target.value;
+    let inputSelected = e.target.value;
     item[e.target.getAttribute("data-index-state-value")].text = inputSelected;
     this.setState({
       expItem: [...item],
