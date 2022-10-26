@@ -29,7 +29,15 @@ class MainInformation extends Component {
   }
   changeItem = () => {};
   onSubmitItem = () => {};
-  handleChange = () => {};
+  handleChange = (e) => {
+    let item = [...this.state.itemMainInformation];
+    let inputSelected = e.target.value;
+    item[e.target.getAttribute("data-index-state-value")].text = inputSelected;
+    this.setState({
+      itemMainInformation: [...item],
+    });
+  };
+
   handleToggleDeleteAll = () => {};
   clearAll = () => {};
 
@@ -88,8 +96,8 @@ class MainInformation extends Component {
           btnList={form.btnList}
           modalActive={isActive}
           btnTwoFunction={this.handleToggle}
-          /*btnOneFunction={}
-      onChange={} */
+          /*btnOneFunction={}*/
+          onChange={this.handleChange}
           stateInputValues={itemMainInformation}
         />
       </>
