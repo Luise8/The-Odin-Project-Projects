@@ -121,7 +121,7 @@ class Experience extends Component {
   changeItem = (id) => {
     this.handleToggleEdit();
     let updateItem;
-    let index: "";
+    let index = "";
     this.state.expList.forEach((item, i) => {
       if (item[0].id === id) {
         updateItem = item;
