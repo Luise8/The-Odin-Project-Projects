@@ -79,7 +79,7 @@ class MainInformation extends Component {
   };
 
   render() {
-    const { isActive, itemMainInformation } = this.state;
+    const { isActive, itemMainInformation, itemOverview } = this.state;
     const form = {
       inputList: [
         {
@@ -107,13 +107,14 @@ class MainInformation extends Component {
         btnTwo: "Cancel",
       },
     };
+
     return (
       <>
         <div className="container-main-information">
           <div>
-            <h1>{itemMainInformation[0].text}</h1>
-            <h2>{itemMainInformation[1].text}</h2>
-            <p>{itemMainInformation[2].text}</p>
+            <h1>{itemOverview[0].text}</h1>
+            <h2>{itemOverview[1].text}</h2>
+            <p>{itemOverview[2].text}</p>
           </div>
           <button className="btn-main-inf" onClick={this.changeItem}>
             EDIT
