@@ -4,13 +4,23 @@ import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import "../styles/MainInformation.css";
 
+const DEFAULTITEMINFORMATION = [
+  { key: "fullName", text: "Add your full name" },
+  {
+    key: "positionTitle",
+    text: "Add your Position Title",
+  },
+  { key: "resume", text: "Add your resume" },
+];
+
 class MainInformation extends Component {
   constructor() {
     super();
 
     this.state = {
       // Item
-      itemOverview: [],
+      itemMainInformation: [...DEFAULTITEMINFORMATION],
+      itemOverview: [...DEFAULTITEMINFORMATION],
       isActive: false, // Modal boolean
     };
     this.changeItem = this.changeItem.bind(this);
