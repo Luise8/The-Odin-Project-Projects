@@ -30,8 +30,36 @@ class MainInformation extends Component {
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this);
   }
-  changeItem = () => {};
-  onSubmitItem = () => {};
+
+  changeItem = () => {
+    this.handleToggle();
+    this.setState({
+      itemMainInformation: [
+        {
+          text: this.state.itemOverview[0].text,
+        },
+        {
+          text: this.state.itemOverview[1].text,
+        },
+        {
+          text: this.state.itemOverview[2].text,
+        },
+      ],
+    });
+  };
+  onSubmitItem = (e) => {
+    e.preventDefault();
+    let newItem = this.state.itemMainInformation.map((item, i) => {
+      if (item.text == "") {
+        item.text = DEFAULTITEMINFORMATION[i].text;
+      }
+      return item;
+    });
+    this.setState({
+      itemOverview: [...newItem],
+      isActive: !this.state.isActive,
+    });
+  };
   handleChange = (e) => {
     let item = [...this.state.itemMainInformation];
     let inputSelected = e.target.value;
