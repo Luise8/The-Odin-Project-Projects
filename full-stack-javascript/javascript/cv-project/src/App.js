@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import MainInformation from "./components/MainInformation";
 import Experience from "./components/Experience";
 import "./styles/styles.css";
-import SecondaryInformation from "./components/SecondaryInformation";
+import Sidebar from "./components/Sidebar";
 import "./styles/App.css";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <div className="main-container">
-          <SecondaryInformation />
+          <Sidebar />
           <div className="right-main-container">
             <MainInformation />
             <h2>Education</h2>
