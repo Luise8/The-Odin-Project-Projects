@@ -10,14 +10,7 @@ class MainInformation extends Component {
 
     this.state = {
       // Item
-      itemMainInformation: [
-        { key: "fullName", text: "Add your full name" },
-        {
-          key: "positionTitle",
-          text: "Add your Position Title",
-        },
-        { key: "resume", text: "Add your resume" },
-      ],
+      itemOverview: [],
       isActive: false, // Modal boolean
     };
     this.changeItem = this.changeItem.bind(this);
