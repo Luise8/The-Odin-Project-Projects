@@ -115,7 +115,7 @@ class MainInformation extends Component {
             <h2>{itemMainInformation[1].text}</h2>
             <p>{itemMainInformation[2].text}</p>
           </div>
-          <button className="btn-main-inf" onClick={this.handleToggle}>
+          <button className="btn-main-inf" onClick={this.changeItem}>
             EDIT
           </button>
           <button className="btn-main-inf" onClick={this.handleToggleDeleteAll}>
@@ -127,7 +127,7 @@ class MainInformation extends Component {
           btnList={form.btnList}
           modalActive={isActive}
           btnTwoFunction={this.handleToggle}
-          /*btnOneFunction={}*/
+          btnOneFunction={this.onSubmitItem}
           onChange={this.handleChange}
           stateInputValues={itemMainInformation}
         />
