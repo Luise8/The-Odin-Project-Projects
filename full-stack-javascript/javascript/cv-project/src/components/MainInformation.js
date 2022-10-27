@@ -22,6 +22,7 @@ class MainInformation extends Component {
       itemMainInformation: [...DEFAULTITEMINFORMATION],
       itemOverview: [...DEFAULTITEMINFORMATION],
       isActive: false, // Modal boolean
+      activeDeleteAll: false, // Modal boolean
     };
     this.changeItem = this.changeItem.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
@@ -69,8 +70,23 @@ class MainInformation extends Component {
     });
   };
 
-  handleToggleDeleteAll = () => {};
-  clearAll = () => {};
+  handleToggleDeleteAll = (e) => {
+    e.preventDefault();
+    this.state.itemOverview.forEach((item, i) => {
+      if (item.text !== DEFAULTITEMINFORMATION[i].text) {
+        this.setState({
+          activeDeleteAll: !this.state.activeDeleteAll,
+        });
+      }
+    });
+  };
+  clearAll = (e) => {
+    e.preventDefault();
+    this.setState({
+      itemOverview: [...DEFAULTITEMINFORMATION],
+      activeDeleteAll: !this.state.activeDeleteAll,
+    });
+  };
 
   handleToggle = () => {
     this.setState({
@@ -79,7 +95,8 @@ class MainInformation extends Component {
   };
 
   render() {
-    const { isActive, itemMainInformation, itemOverview } = this.state;
+    const { isActive, itemMainInformation, itemOverview, activeDeleteAll } =
+      this.state;
     const form = {
       inputList: [
         {
@@ -123,6 +140,12 @@ class MainInformation extends Component {
             DEFAULT RESTORE
           </button>
         </div>
+        <ModalConfirmation
+          modalActive={activeDeleteAll}
+          btnOneFunction={this.clearAll}
+          btnTwoFunction={this.handleToggleDeleteAll}
+          text="Are you sure you want to delete your primary personal information?"
+        />
         <ModalForm
           inputsList={form.inputList}
           btnList={form.btnList}
