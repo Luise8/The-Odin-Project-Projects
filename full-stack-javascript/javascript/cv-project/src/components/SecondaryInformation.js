@@ -1,6 +1,8 @@
 // SecondaryInformation.js
-// This component has a CV app section
+// Sidebar
 import React, { Component } from "react";
+import ModalForm from "./ModalForm";
+import ModalConfirmation from "./ModalConfirmation";
 import "../styles/SecondaryInformation.css";
 
 class SecondaryInformation extends Component {
