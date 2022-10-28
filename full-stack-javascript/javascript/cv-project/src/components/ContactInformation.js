@@ -23,13 +23,62 @@ class ContactInformation extends Component {
       isActive: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
     };
-    /*     this.changeItem = this.changeItem.bind(this);
+
     this.handleToggle = this.handleToggle.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.changeItem = this.changeItem.bind(this);
+    /*     ;
+   
+
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this); */
   }
+
+  handleChange = (e) => {
+    let item = [...this.state.itemContactInformation];
+    let inputSelected = e.target.value;
+    item[e.target.getAttribute("data-index-state-value")].text = inputSelected;
+    this.setState({
+      itemContactInformation: [...item],
+    });
+  };
+
+  handleToggle = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  };
+
+  changeItem = () => {
+    this.handleToggle();
+    /*     let newItem = this.state.itemOverview.map((item, i) => {
+      return item;
+    }); */
+    this.setState({
+      itemContactInformation: [
+        { text: this.state.itemOverview[0].text },
+        { text: this.state.itemOverview[1].text },
+        { text: this.state.itemOverview[2].text },
+        { text: this.state.itemOverview[3].text },
+        { text: this.state.itemOverview[4].text },
+      ],
+    });
+  };
+
+  onSubmitItem = (e) => {
+    e.preventDefault();
+    let newItem = this.state.itemContactInformation.map((item, i) => {
+      if (item.text == "") {
+        item.text = DEFAULTITEMINFORMATION[i].text;
+      }
+      return item;
+    });
+    this.setState({
+      itemOverview: [...newItem],
+      isActive: !this.state.isActive,
+    });
+  };
 
   render() {
     const { isActive, itemContactInformation, itemOverview, activeDeleteAll } =
@@ -62,7 +111,7 @@ class ContactInformation extends Component {
           indexStateValue: 3,
         },
         {
-          titleLabel: DEFAULTITEMINFORMATION[4].text,
+          titleLabel: "Enter your website URL",
           keyStateName: "website",
           typeInput: "text",
           indexStateValue: 4,
@@ -100,7 +149,7 @@ class ContactInformation extends Component {
             </div>
           </div>
           <div className="container-btn-contact-inf">
-            <button className="btn-contact-inf" /* onClick={this.changeItem} */>
+            <button className="btn-contact-inf" onClick={this.changeItem}>
               EDIT
             </button>
             <button
@@ -116,16 +165,16 @@ class ContactInformation extends Component {
           btnOneFunction={this.clearAll}
           btnTwoFunction={this.handleToggleDeleteAll}
           text="Are you sure you want to delete your primary personal information?" 
-        />
+    />*/}
         <ModalForm
-                  inputsList={form.inputList}
+          inputsList={form.inputList}
           btnList={form.btnList}
           modalActive={isActive}
           btnTwoFunction={this.handleToggle}
           btnOneFunction={this.onSubmitItem}
-          onChange={this.handleChange} 
-          stateInputValues={}
-        /> */}
+          onChange={this.handleChange}
+          stateInputValues={itemContactInformation}
+        />
       </>
     );
   }
