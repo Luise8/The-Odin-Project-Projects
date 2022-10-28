@@ -28,11 +28,8 @@ class ContactInformation extends Component {
     this.onSubmitItem = this.onSubmitItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.changeItem = this.changeItem.bind(this);
-    /*     ;
-   
-
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
-    this.clearAll = this.clearAll.bind(this); */
+    this.clearAll = this.clearAll.bind(this);
   }
 
   handleChange = (e) => {
@@ -77,6 +74,25 @@ class ContactInformation extends Component {
     this.setState({
       itemOverview: [...newItem],
       isActive: !this.state.isActive,
+    });
+  };
+
+  handleToggleDeleteAll = (e) => {
+    e.preventDefault();
+    this.state.itemOverview.forEach((item, i) => {
+      if (item.text !== DEFAULTITEMINFORMATION[i].text) {
+        this.setState({
+          activeDeleteAll: !this.state.activeDeleteAll,
+        });
+      }
+    });
+  };
+
+  clearAll = (e) => {
+    e.preventDefault();
+    this.setState({
+      itemOverview: [...DEFAULTITEMINFORMATION],
+      activeDeleteAll: !this.state.activeDeleteAll,
     });
   };
 
@@ -154,18 +170,18 @@ class ContactInformation extends Component {
             </button>
             <button
               className="btn-contact-inf"
-              /*   onClick={this.handleToggleDeleteAll} */
+              onClick={this.handleToggleDeleteAll}
             >
               DEFAULT RESTORE
             </button>
           </div>
         </div>
-        {/* <ModalConfirmation
-                 modalActive={activeDeleteAll}
+        <ModalConfirmation
+          modalActive={activeDeleteAll}
           btnOneFunction={this.clearAll}
           btnTwoFunction={this.handleToggleDeleteAll}
-          text="Are you sure you want to delete your primary personal information?" 
-    />*/}
+          text="Are you sure you want to delete your contact information?"
+        />
         <ModalForm
           inputsList={form.inputList}
           btnList={form.btnList}
