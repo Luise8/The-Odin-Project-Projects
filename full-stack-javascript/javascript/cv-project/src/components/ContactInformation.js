@@ -34,7 +34,45 @@ class ContactInformation extends Component {
   render() {
     const { isActive, itemContactInformation, itemOverview, activeDeleteAll } =
       this.state;
-    const form = {};
+
+    const form = {
+      inputList: [
+        {
+          titleLabel: DEFAULTITEMINFORMATION[0].text,
+          keyStateName: "address",
+          typeInput: "text",
+          indexStateValue: 0,
+        },
+        {
+          titleLabel: DEFAULTITEMINFORMATION[1].text,
+          keyStateName: "phoneNumber",
+          typeInput: "text",
+          indexStateValue: 1,
+        },
+        {
+          titleLabel: DEFAULTITEMINFORMATION[2].text,
+          keyStateName: "email",
+          typeInput: "text",
+          indexStateValue: 2,
+        },
+        {
+          titleLabel: DEFAULTITEMINFORMATION[3].text,
+          keyStateName: "linkedin",
+          typeInput: "text",
+          indexStateValue: 3,
+        },
+        {
+          titleLabel: DEFAULTITEMINFORMATION[4].text,
+          keyStateName: "website",
+          typeInput: "text",
+          indexStateValue: 4,
+        },
+      ],
+      btnList: {
+        btnOne: "Save",
+        btnTwo: "Cancel",
+      },
+    };
 
     return (
       <>
