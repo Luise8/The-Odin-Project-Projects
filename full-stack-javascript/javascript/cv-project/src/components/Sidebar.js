@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import "../styles/Sidebar.css";
+import ContactInformation from "./ContactInformation";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -13,7 +14,11 @@ class Sidebar extends Component {
   }
 
   render() {
-    return <div className="containerSidebar"></div>;
+    return (
+      <div className="containerSidebar">
+        <ContactInformation />
+      </div>
+    );
   }
 }
 
