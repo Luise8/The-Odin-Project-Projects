@@ -1,0 +1,11 @@
+.container-contact-information {
+  background-color: rgba(173, 85, 224, 0.87);
+}
+.container-contact-information:hover .btn-contact-inf {
+  display: flex;
+}
+
+.btn-contact-inf {
+  display: none;
+  height: 30px;
+}

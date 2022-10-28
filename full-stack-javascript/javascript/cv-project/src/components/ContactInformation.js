@@ -1,5 +1,10 @@
 // ContactInformation.js
 import React, { Component } from "react";
+import ModalForm from "./ModalForm";
+import ModalConfirmation from "./ModalConfirmation";
+import "../styles/ContactInformation.css";
+
+const DEFAULTITEMINFORMATION = [];
 
 class ContactInformation extends Component {
   constructor() {
@@ -27,15 +32,33 @@ class ContactInformation extends Component {
 
     return (
       <>
-        <div className="container-main-information">
+        <div className="container-contact-information">
           <div></div>
-          <button className="btn-main-inf" onClick={this.changeItem}>
+          <button className="btn-contact-inf" onClick={this.changeItem}>
             EDIT
           </button>
-          <button className="btn-main-inf" onClick={this.handleToggleDeleteAll}>
+          <button
+            className="btn-contact-inf"
+            onClick={this.handleToggleDeleteAll}
+          >
             DEFAULT RESTORE
           </button>
         </div>
+        <ModalConfirmation
+        /*           modalActive={activeDeleteAll}
+          btnOneFunction={this.clearAll}
+          btnTwoFunction={this.handleToggleDeleteAll}
+          text="Are you sure you want to delete your primary personal information?" */
+        />
+        <ModalForm
+        /*           inputsList={form.inputList}
+          btnList={form.btnList}
+          modalActive={isActive}
+          btnTwoFunction={this.handleToggle}
+          btnOneFunction={this.onSubmitItem}
+          onChange={this.handleChange} 
+          stateInputValues={}*/
+        />
       </>
     );
   }
