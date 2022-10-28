@@ -4,12 +4,28 @@
   display: flex;
   gap: 14px;
   justify-content: center;
-}
-.container-contact-information:hover .btn-contact-inf {
-  display: flex;
+  position: relative;
+  padding-top: 40px;
 }
 
-.btn-contact-inf {
+/* SINGLE ITEM */
+.container-contact-inf-child {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* SHOW BUTTONS */
+.container-contact-information:hover .container-btn-contact-inf {
+  display: flex;
+  justify-content: center;
+}
+.container-btn-contact-inf {
+  position: absolute;
+  top: 5px;
+  gap: 10px;
   display: none;
+}
+.btn-contact-inf {
   height: 30px;
 }

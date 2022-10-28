@@ -61,15 +61,17 @@ class ContactInformation extends Component {
               <p>{itemOverview[4].text}</p>
             </div>
           </div>
-          <button className="btn-contact-inf" /* onClick={this.changeItem} */>
-            EDIT
-          </button>
-          <button
-            className="btn-contact-inf"
-            /*   onClick={this.handleToggleDeleteAll} */
-          >
-            DEFAULT RESTORE
-          </button>
+          <div className="container-btn-contact-inf">
+            <button className="btn-contact-inf" /* onClick={this.changeItem} */>
+              EDIT
+            </button>
+            <button
+              className="btn-contact-inf"
+              /*   onClick={this.handleToggleDeleteAll} */
+            >
+              DEFAULT RESTORE
+            </button>
+          </div>
         </div>
         {/* <ModalConfirmation
                  modalActive={activeDeleteAll}
