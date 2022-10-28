@@ -87,25 +87,25 @@ class ContactInformation extends Component {
     const form = {
       inputList: [
         {
-          titleLabel: DEFAULTITEMINFORMATION[0].text,
+          titleLabel: "Enter your address",
           keyStateName: "address",
           typeInput: "text",
           indexStateValue: 0,
         },
         {
-          titleLabel: DEFAULTITEMINFORMATION[1].text,
+          titleLabel: "Enter your phone",
           keyStateName: "phoneNumber",
           typeInput: "text",
           indexStateValue: 1,
         },
         {
-          titleLabel: DEFAULTITEMINFORMATION[2].text,
+          titleLabel: "Enter your email",
           keyStateName: "email",
           typeInput: "text",
           indexStateValue: 2,
         },
         {
-          titleLabel: DEFAULTITEMINFORMATION[3].text,
+          titleLabel: "Enter your LinkedIn",
           keyStateName: "linkedin",
           typeInput: "text",
           indexStateValue: 3,
