@@ -4,7 +4,13 @@ import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import "../styles/ContactInformation.css";
 
-const DEFAULTITEMINFORMATION = [];
+const DEFAULTITEMINFORMATION = [
+  { key: "address", text: "Add your address" },
+  { key: "phoneNumber", text: "Add your phone number" },
+  { key: "email", text: "Add your email" },
+  { key: "linkedin", text: "Add your Linkedin" },
+  { key: "website", text: "Add your website" },
+];
 
 class ContactInformation extends Component {
   constructor() {
@@ -12,8 +18,8 @@ class ContactInformation extends Component {
 
     this.state = {
       // Item
-      itemMainInformation: [],
-      itemOverview: [],
+      itemContactInformation: [...DEFAULTITEMINFORMATION],
+      itemOverview: [...DEFAULTITEMINFORMATION],
       isActive: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
     };
@@ -26,14 +32,35 @@ class ContactInformation extends Component {
   }
 
   render() {
-    const { isActive, itemMainInformation, itemOverview, activeDeleteAll } =
+    const { isActive, itemContactInformation, itemOverview, activeDeleteAll } =
       this.state;
     const form = {};
 
     return (
       <>
         <div className="container-contact-information">
-          <div></div>
+          <div className="container-contact-inf-child">
+            <div>
+              <h3>ADDRESS</h3>
+              <p>{itemOverview[0].text}</p>
+            </div>
+            <div>
+              <h3>PHONE</h3>
+              <p>{itemOverview[1].text}</p>
+            </div>
+            <div>
+              <h3>EMAIL</h3>
+              <p>{itemOverview[2].text}</p>
+            </div>
+            <div>
+              <h3>LINKEDIN</h3>
+              <p>{itemOverview[3].text}</p>
+            </div>
+            <div>
+              <h3>WEBSITE</h3>
+              <p>{itemOverview[4].text}</p>
+            </div>
+          </div>
           <button className="btn-contact-inf" /* onClick={this.changeItem} */>
             EDIT
           </button>
