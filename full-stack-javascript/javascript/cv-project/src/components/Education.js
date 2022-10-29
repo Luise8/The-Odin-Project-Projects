@@ -29,8 +29,9 @@ class Education extends Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    /*    this.removeItem = this.removeItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
     this.changeItem = this.changeItem.bind(this);
+    /*    
       this.handleToggleEdit = this.handleToggleEdit.bind(this);
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this); */
@@ -74,6 +75,47 @@ class Education extends Component {
       isActive: !this.state.isActive,
     });
   };
+
+  // To each single item buttons
+  changeItem = (id) => {
+    this.handleToggleEdit();
+    let updateItem;
+    let index = "";
+    this.state.eduList.forEach((item, i) => {
+      if (item[0].id === id) {
+        updateItem = item;
+        index = i;
+      }
+    });
+    this.setState({
+      eduItem: [
+        { id: id },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      itemSelectedIndex: index,
+    });
+  };
+
+  removeItem(id) {
+    const newList = this.state.eduList.filter((eduItem) => {
+      return eduItem[0].id !== id;
+    });
+
+    this.setState({
+      eduList: [...newList],
+      eduItem: [
+        { id: uniqid() },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      isActive: false,
+    });
+  }
 
   render() {
     const { eduList, isActive, eduItem, isActiveEdit, activeDeleteAll } =
@@ -128,11 +170,11 @@ class Education extends Component {
         </div>
 
         {/* Show all the items Education on the screen */}
-        {/*         <Overview
-          itemList={}
+        <Overview
+          itemList={eduList}
           removeItem={this.removeItem}
           changeItem={this.changeItem}
-        /> */}
+        />
         {/* Modal confirmation to delete all */}
         {/*         <ModalConfirmation
           modalActive={activeDeleteAll}
