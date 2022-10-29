@@ -1,6 +1,8 @@
 .containerSidebar {
   display: flex;
+  flex-direction: column;
   background-color: red;
   width: 20vw;
   height: 100vh;
+  gap: 30px;
 }

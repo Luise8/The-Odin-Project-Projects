@@ -35,25 +35,34 @@ class Skills extends Component {
 
   render() {
     return (
-      <div>
-        <div className="container-title-skills">
-          <h3>SKILLS</h3>
-          <button className="btn-add-skill" /* onClick={this.handleToggle} */>
-            ADD
-          </button>
-          <button
-            className="btn-add-skill"
-            /* onClick={this.handleToggleDeleteAll} */
-          >
-            DELETE ALL
-          </button>
-        </div>
-        {/* Show all the items experience on the screen */}
-        {/*  <OverviewArrayObjects
+      <>
+        <div className="container-skills">
+          <div className="container-header-skills">
+            <div className="container-title-skills">
+              <h3>SKILLS</h3>
+            </div>
+            <div className="container-btn-skills">
+              <button
+                className="btn-add-skills" /* onClick={this.handleToggle} */
+              >
+                ADD
+              </button>
+              <button
+                className="btn-add-skills"
+                /* onClick={this.handleToggleDeleteAll} */
+              >
+                DELETE ALL
+              </button>
+            </div>
+          </div>
+
+          {/* Show all the items experience on the screen */}
+          {/*  <OverviewArrayObjects
           itemList={}
           removeItem={this.removeItem}
           changeItem={this.changeItem}
         /> */}
+        </div>
         {/* Modal confirmation to delete all */}
         {/*  <ModalConfirmation
           modalActive={activeDeleteAll}
@@ -81,7 +90,7 @@ class Skills extends Component {
           btnOneFunction={this.onSubmitItem}
           onChange={this.handleChange}
         /> */}
-      </div>
+      </>
     );
   }
 }

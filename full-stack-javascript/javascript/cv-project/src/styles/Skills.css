@@ -1,0 +1,18 @@
+.container-header-skills {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* BUTTONS */
+.container-btn-skills {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+.container-header-skills:hover .container-btn-skills {
+  display: flex;
+  gap: 10px;
+}
