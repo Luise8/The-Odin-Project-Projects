@@ -28,9 +28,11 @@ class Skills extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.changeItem = this.changeItem.bind(this);
-    /*     
     this.handleToggleEdit = this.handleToggleEdit.bind(this);
-    this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
+    this.onsubmitEditItem = this.onsubmitEditItem.bind(this);
+
+    /*     
+        this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this); */
   }
 
@@ -68,6 +70,12 @@ class Skills extends Component {
   };
 
   // To each single item buttons
+  handleToggleEdit = () => {
+    this.setState({
+      isActiveEdit: !this.state.isActiveEdit,
+    });
+  };
+
   changeItem = (id) => {
     this.handleToggleEdit();
     let updateItem;
@@ -107,6 +115,27 @@ class Skills extends Component {
       isActive: false,
     });
   }
+
+  onsubmitEditItem = (e) => {
+    e.preventDefault();
+    const newList = this.state.skillList.map((item, i) => {
+      if (
+        item[0].id === this.state.skillList[this.state.itemSelectedIndex][0].id
+      ) {
+        item = this.state.skillItem;
+      }
+      return item;
+    });
+    this.setState({
+      skillList: [...newList],
+      skillItem: [
+        { id: uniqid() },
+        { key: "skill", text: "", tag: "p", className: "para" },
+      ],
+      isActiveEdit: false,
+      itemSelectedIndex: -1,
+    });
+  };
 
   render() {
     const { skillList, isActive, skillItem, isActiveEdit, activeDeleteAll } =
@@ -162,7 +191,7 @@ class Skills extends Component {
           text=""
         /> */}
         {/* Modal edit fornm */}
-        {/* <ModalForm
+        <ModalForm
           modalActive={isActiveEdit}
           inputsList={form.inputsList}
           btnList={form.btnList}
@@ -170,7 +199,7 @@ class Skills extends Component {
           btnTwoFunction={this.handleToggleEdit}
           btnOneFunction={this.onsubmitEditItem}
           onChange={this.handleChange}
-        /> */}
+        />
         {/* Modal fornm */}
         <ModalForm
           modalActive={isActive}
