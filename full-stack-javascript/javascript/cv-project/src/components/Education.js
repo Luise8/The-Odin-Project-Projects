@@ -25,17 +25,59 @@ class Education extends Component {
       activeDeleteAll: false, // Modal boolean
       itemSelectedIndex: -1, // pointer item for edit
     };
-    /*    this.removeItem = this.removeItem.bind(this);
-    this.changeItem = this.changeItem.bind(this);
+
     this.handleToggle = this.handleToggle.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleToggleEdit = this.handleToggleEdit.bind(this);
+    /*    this.removeItem = this.removeItem.bind(this);
+    this.changeItem = this.changeItem.bind(this);
+      this.handleToggleEdit = this.handleToggleEdit.bind(this);
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this); */
   }
+  // To handle the input changes in the form
+  handleChange = (e) => {
+    //e.target.getAttribute("")
+    let item = [...this.state.eduItem];
+    let inputSelected = e.target.value;
+    item[e.target.getAttribute("data-index-state-value")].text = inputSelected;
+    this.setState({
+      eduItem: [...item],
+    });
+  };
+
+  // To add new items button
+  handleToggle = () => {
+    this.setState({
+      eduItem: [
+        { id: uniqid() },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      isActive: !this.state.isActive,
+    });
+  };
+
+  onSubmitItem = (e) => {
+    e.preventDefault();
+    this.setState({
+      eduList: this.state.eduList.concat([this.state.eduItem]),
+      eduItem: [
+        { id: uniqid() },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      isActive: !this.state.isActive,
+    });
+  };
 
   render() {
+    const { eduList, isActive, eduItem, isActiveEdit, activeDeleteAll } =
+      this.state;
     // object that has inputsList and btnList for ModalForm component.
     const form = {
       inputsList: [
@@ -103,21 +145,21 @@ class Education extends Component {
           modalActive={isActiveEdit}
           inputsList={form.inputsList}
           btnList={form.btnList}
-          stateInputValues={}
+          stateInputValues={eduItem}
           btnTwoFunction={this.handleToggleEdit}
           btnOneFunction={this.onsubmitEditItem}
           onChange={this.handleChange}
         /> */}
         {/* Modal fornm */}
-        {/* <ModalForm
+        <ModalForm
           modalActive={isActive}
           inputsList={form.inputsList}
           btnList={form.btnList}
-          stateInputValues={}
+          stateInputValues={eduItem}
           btnTwoFunction={this.handleToggle}
           btnOneFunction={this.onSubmitItem}
           onChange={this.handleChange}
-        /> */}
+        />
       </div>
     );
   }
