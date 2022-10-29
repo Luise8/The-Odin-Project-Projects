@@ -20,7 +20,7 @@ class Skills extends Component {
       isActive: false, // Modal boolean
       isActiveEdit: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
-      itemSelectedIndex: -1, // pointer expList item for edit item
+      itemSelectedIndex: -1, // pointer item for edit
     };
 
     this.handleToggle = this.handleToggle.bind(this);
@@ -30,10 +30,8 @@ class Skills extends Component {
     this.changeItem = this.changeItem.bind(this);
     this.handleToggleEdit = this.handleToggleEdit.bind(this);
     this.onsubmitEditItem = this.onsubmitEditItem.bind(this);
-
-    /*     
-        this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
-    this.clearAll = this.clearAll.bind(this); */
+    this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
+    this.clearAll = this.clearAll.bind(this);
   }
 
   // To handle the input changes in the form
@@ -66,6 +64,29 @@ class Skills extends Component {
         { key: "skill", text: "", tag: "p", className: "para" },
       ],
       isActive: !this.state.isActive,
+    });
+  };
+
+  // To delete all items button
+  handleToggleDeleteAll(e) {
+    e.preventDefault();
+    if (this.state.skillList.length > 0) {
+      this.setState({
+        activeDeleteAll: !this.state.activeDeleteAll,
+      });
+    }
+  }
+
+  clearAll = (e) => {
+    e.preventDefault();
+    this.setState({
+      skillItem: [
+        { id: uniqid() },
+        { key: "skill", text: "", tag: "p", className: "para" },
+      ],
+      skillList: [],
+      activeDeleteAll: false,
+      itemSelectedIndex: -1,
     });
   };
 
@@ -169,14 +190,14 @@ class Skills extends Component {
               </button>
               <button
                 className="btn-add-skills"
-                /* onClick={this.handleToggleDeleteAll} */
+                onClick={this.handleToggleDeleteAll}
               >
                 DELETE ALL
               </button>
             </div>
           </div>
 
-          {/* Show all the items experience on the screen */}
+          {/* Show all the items skills on the screen */}
           <OverviewArrayObjects
             itemList={skillList}
             removeItem={this.removeItem}
@@ -184,12 +205,12 @@ class Skills extends Component {
           />
         </div>
         {/* Modal confirmation to delete all */}
-        {/*  <ModalConfirmation
+        <ModalConfirmation
           modalActive={activeDeleteAll}
           btnOneFunction={this.clearAll}
           btnTwoFunction={this.handleToggleDeleteAll}
-          text=""
-        /> */}
+          text="Are you sure you want to delete all added skills?"
+        />
         {/* Modal edit fornm */}
         <ModalForm
           modalActive={isActiveEdit}
