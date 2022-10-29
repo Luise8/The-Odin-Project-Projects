@@ -5,6 +5,7 @@ import Experience from "./components/Experience";
 import "./styles/styles.css";
 import Sidebar from "./components/Sidebar";
 import "./styles/App.css";
+import Education from "./components/Education";
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends Component {
           <Sidebar />
           <div className="right-main-container">
             <MainInformation />
-            <h2>Education</h2>
+            <Education />
             <Experience />
           </div>
         </div>
