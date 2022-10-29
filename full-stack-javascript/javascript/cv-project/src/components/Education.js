@@ -12,6 +12,18 @@ class Education extends Component {
 
     this.state = {
       // Item
+      eduItem: [
+        { id: uniqid() },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      eduList: [], // Array of items
+      isActive: false, // Modal boolean
+      isActiveEdit: false, // Modal boolean
+      activeDeleteAll: false, // Modal boolean
+      itemSelectedIndex: -1, // pointer item for edit
     };
     /*    this.removeItem = this.removeItem.bind(this);
     this.changeItem = this.changeItem.bind(this);
@@ -24,6 +36,43 @@ class Education extends Component {
   }
 
   render() {
+    // object that has inputsList and btnList for ModalForm component.
+    const form = {
+      inputsList: [
+        {
+          titleLabel: "Educational Institution:",
+          keyStateName: "institution",
+          typeInput: "text",
+          indexStateValue: 1,
+        },
+
+        {
+          titleLabel: "Degree:",
+          keyStateName: "degree",
+          typeInput: "text",
+          indexStateValue: 2,
+        },
+
+        {
+          titleLabel: "Date From:",
+          keyStateName: "datefrom",
+          typeInput: "date",
+          indexStateValue: 3,
+        },
+
+        {
+          titleLabel: "Date to:",
+          keyStateName: "dateTo",
+          typeInput: "date",
+          indexStateValue: 4,
+        },
+      ],
+      btnList: {
+        btnOne: "Save",
+        btnTwo: "Cancel",
+      },
+    };
+
     return (
       <div>
         <div className="section-header">
