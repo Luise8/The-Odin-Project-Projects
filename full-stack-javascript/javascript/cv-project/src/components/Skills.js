@@ -26,8 +26,9 @@ class Skills extends Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    /*     this.removeItem = this.removeItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
     this.changeItem = this.changeItem.bind(this);
+    /*     
     this.handleToggleEdit = this.handleToggleEdit.bind(this);
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this); */
@@ -46,7 +47,7 @@ class Skills extends Component {
   // To add new items button
   handleToggle = () => {
     this.setState({
-      skilltem: [
+      skillItem: [
         { id: uniqid() },
         { key: "skill", text: "", tag: "p", className: "para" },
       ],
@@ -57,14 +58,55 @@ class Skills extends Component {
   onSubmitItem = (e) => {
     e.preventDefault();
     this.setState({
-      skillList: this.state.skillList.concat([this.state.skilltem]),
-      skilltem: [
+      skillList: this.state.skillList.concat([this.state.skillItem]),
+      skillItem: [
         { id: uniqid() },
         { key: "skill", text: "", tag: "p", className: "para" },
       ],
       isActive: !this.state.isActive,
     });
   };
+
+  // To each single item buttons
+  changeItem = (id) => {
+    this.handleToggleEdit();
+    let updateItem;
+    let index = "";
+    this.state.skillList.forEach((item, i) => {
+      if (item[0].id === id) {
+        updateItem = item;
+        index = i;
+      }
+    });
+
+    this.setState({
+      skillItem: [
+        { id: id },
+        {
+          key: "skill",
+          text: updateItem[1].text,
+          tag: "p",
+          className: "para",
+        },
+      ],
+      itemSelectedIndex: index,
+    });
+  };
+
+  removeItem(id) {
+    const newList = this.state.skillList.filter((skillItem) => {
+      return skillItem[0].id !== id;
+    });
+
+    this.setState({
+      skillList: [...newList],
+      skillItem: [
+        { id: uniqid() },
+        { key: "skill", text: "", tag: "p", className: "para" },
+      ],
+      isActive: false,
+    });
+  }
 
   render() {
     const { skillList, isActive, skillItem, isActiveEdit, activeDeleteAll } =
@@ -106,11 +148,11 @@ class Skills extends Component {
           </div>
 
           {/* Show all the items experience on the screen */}
-          {/*  <OverviewArrayObjects
-          itemList={skillList}
-          removeItem={this.removeItem}
-          changeItem={this.changeItem}
-        /> */}
+          <OverviewArrayObjects
+            itemList={skillList}
+            removeItem={this.removeItem}
+            changeItem={this.changeItem}
+          />
         </div>
         {/* Modal confirmation to delete all */}
         {/*  <ModalConfirmation
