@@ -28,10 +28,10 @@ class Education extends Component {
       <div>
         <div className="section-header">
           <h2>Education</h2>
-          <button className="btn-add-edu" onClick={this.handleToggle}>
+          <button className="btn add-edu" onClick={this.handleToggle}>
             ADD
           </button>
-          <button className="btn-add-edu" onClick={this.handleToggleDeleteAll}>
+          <button className="btn dlt-edu" onClick={this.handleToggleDeleteAll}>
             DELETE ALL
           </button>
         </div>

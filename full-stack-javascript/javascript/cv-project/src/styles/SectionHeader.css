@@ -3,10 +3,10 @@
   gap: 10px;
 }
 
-.btn-add-exp {
+.btn {
   display: none;
 }
 
-.section-header:hover .btn-add-exp {
+.section-header:hover .btn {
   display: flex;
 }

@@ -285,10 +285,10 @@ class Experience extends Component {
       <div>
         <div className="section-header">
           <h2>Work Experience</h2>
-          <button className="btn-add-exp" onClick={this.handleToggle}>
+          <button className="btn add-exp" onClick={this.handleToggle}>
             ADD
           </button>
-          <button className="btn-add-exp" onClick={this.handleToggleDeleteAll}>
+          <button className="btn dlt-exp" onClick={this.handleToggleDeleteAll}>
             DELETE ALL
           </button>
         </div>
