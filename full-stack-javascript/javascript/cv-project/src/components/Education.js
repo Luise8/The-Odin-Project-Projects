@@ -83,6 +83,7 @@ class Education extends Component {
       isActiveEdit: !this.state.isActiveEdit,
     });
   };
+
   changeItem = (id) => {
     this.handleToggleEdit();
     let updateItem;
@@ -96,10 +97,30 @@ class Education extends Component {
     this.setState({
       eduItem: [
         { id: id },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "institution",
+          text: updateItem[1].text,
+          tag: "h3",
+          className: "title",
+        },
+        {
+          key: "degree",
+          text: updateItem[2].text,
+          tag: "p",
+          className: "para",
+        },
+        {
+          key: "dateFrom",
+          text: updateItem[3].text,
+          tag: "p",
+          className: "para lowOpacity",
+        },
+        {
+          key: "dateTo",
+          text: updateItem[4].text,
+          tag: "p",
+          className: "para lowOpacity",
+        },
       ],
       itemSelectedIndex: index,
     });
