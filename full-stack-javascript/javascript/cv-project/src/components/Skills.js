@@ -177,6 +177,14 @@ class Skills extends Component {
         btnTwo: "Cancel",
       },
     };
+
+    // Block scrolling when some modal is active
+    if (isActive || isActiveEdit || activeDeleteAll) {
+      document.body.classList.add("active-modal");
+    } else {
+      document.body.classList.remove("active-modal");
+    }
+
     return (
       <>
         <div className="container-skills">

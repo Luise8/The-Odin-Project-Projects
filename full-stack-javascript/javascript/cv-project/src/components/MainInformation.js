@@ -125,6 +125,13 @@ class MainInformation extends Component {
       },
     };
 
+    // Block scrolling when some modal is active
+    if (isActive || activeDeleteAll) {
+      document.body.classList.add("active-modal");
+    } else {
+      document.body.classList.remove("active-modal");
+    }
+
     return (
       <>
         <div className="container-main-information">

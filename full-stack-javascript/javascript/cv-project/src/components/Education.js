@@ -234,6 +234,13 @@ class Education extends Component {
       },
     };
 
+    // Block scrolling when some modal is active
+    if (isActive || isActiveEdit || activeDeleteAll) {
+      document.body.classList.add("active-modal");
+    } else {
+      document.body.classList.remove("active-modal");
+    }
+
     return (
       <div>
         <div className="section-header">
