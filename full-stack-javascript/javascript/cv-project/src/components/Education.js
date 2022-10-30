@@ -31,8 +31,9 @@ class Education extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.changeItem = this.changeItem.bind(this);
+    this.handleToggleEdit = this.handleToggleEdit.bind(this);
+    this.onsubmitEditItem = this.onsubmitEditItem.bind(this);
     /*    
-      this.handleToggleEdit = this.handleToggleEdit.bind(this);
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this); */
   }
@@ -77,6 +78,11 @@ class Education extends Component {
   };
 
   // To each single item buttons
+  handleToggleEdit = () => {
+    this.setState({
+      isActiveEdit: !this.state.isActiveEdit,
+    });
+  };
   changeItem = (id) => {
     this.handleToggleEdit();
     let updateItem;
@@ -117,6 +123,29 @@ class Education extends Component {
     });
   }
 
+  onsubmitEditItem = (e) => {
+    e.preventDefault();
+    const newList = this.state.eduList.map((item, i) => {
+      if (
+        item[0].id === this.state.eduList[this.state.itemSelectedIndex][0].id
+      ) {
+        item = this.state.eduItem;
+      }
+      return item;
+    });
+    this.setState({
+      eduList: [...newList],
+      eduItem: [
+        { id: uniqid() },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      isActiveEdit: false,
+      itemSelectedIndex: -1,
+    });
+  };
   render() {
     const { eduList, isActive, eduItem, isActiveEdit, activeDeleteAll } =
       this.state;
@@ -183,7 +212,7 @@ class Education extends Component {
           text=""
         /> */}
         {/* Modal edit fornm */}
-        {/*  <ModalForm
+        <ModalForm
           modalActive={isActiveEdit}
           inputsList={form.inputsList}
           btnList={form.btnList}
@@ -191,7 +220,7 @@ class Education extends Component {
           btnTwoFunction={this.handleToggleEdit}
           btnOneFunction={this.onsubmitEditItem}
           onChange={this.handleChange}
-        /> */}
+        />
         {/* Modal fornm */}
         <ModalForm
           modalActive={isActive}
