@@ -33,9 +33,8 @@ class Education extends Component {
     this.changeItem = this.changeItem.bind(this);
     this.handleToggleEdit = this.handleToggleEdit.bind(this);
     this.onsubmitEditItem = this.onsubmitEditItem.bind(this);
-    /*    
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
-    this.clearAll = this.clearAll.bind(this); */
+    this.clearAll = this.clearAll.bind(this);
   }
   // To handle the input changes in the form
   handleChange = (e) => {
@@ -74,6 +73,32 @@ class Education extends Component {
         { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
       ],
       isActive: !this.state.isActive,
+    });
+  };
+
+  // To delete all items button
+  handleToggleDeleteAll(e) {
+    e.preventDefault();
+    if (this.state.eduList.length > 0) {
+      this.setState({
+        activeDeleteAll: !this.state.activeDeleteAll,
+      });
+    }
+  }
+
+  clearAll = (e) => {
+    e.preventDefault();
+    this.setState({
+      eduItem: [
+        { id: uniqid() },
+        { key: "institution", text: "", tag: "h3", className: "title" },
+        { key: "degree", text: "", tag: "p", className: "para" },
+        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
+        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+      ],
+      eduList: [],
+      activeDeleteAll: false,
+      itemSelectedIndex: -1,
     });
   };
 
@@ -167,9 +192,11 @@ class Education extends Component {
       itemSelectedIndex: -1,
     });
   };
+
   render() {
     const { eduList, isActive, eduItem, isActiveEdit, activeDeleteAll } =
       this.state;
+
     // object that has inputsList and btnList for ModalForm component.
     const form = {
       inputsList: [
@@ -226,12 +253,12 @@ class Education extends Component {
           changeItem={this.changeItem}
         />
         {/* Modal confirmation to delete all */}
-        {/*         <ModalConfirmation
+        <ModalConfirmation
           modalActive={activeDeleteAll}
           btnOneFunction={this.clearAll}
           btnTwoFunction={this.handleToggleDeleteAll}
-          text=""
-        /> */}
+          text="Are you sure you want to remove all of the education added?"
+        />
         {/* Modal edit fornm */}
         <ModalForm
           modalActive={isActiveEdit}
