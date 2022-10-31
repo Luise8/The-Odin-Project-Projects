@@ -10,6 +10,7 @@
   width: 215.9mm;
   height: 279.4mm;
   background-color: #fff;
+  z-index: 1;
 }
 
 .right-main-container-sheet {
@@ -28,4 +29,5 @@
   padding: 20px;
   display: flex;
   align-items: center;
+  z-index: 0;
 }
