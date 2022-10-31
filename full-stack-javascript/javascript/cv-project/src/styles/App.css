@@ -1,7 +1,23 @@
 .main-container {
   display: flex;
+  justify-content: center;
+  background-color: rgb(98, 100, 116);
+  position: relative;
 }
 
-.right-main-container {
-  flex-grow: 1;
+.main-container-sheet {
+  display: flex;
+  width: 215.9mm;
+  height: 279.4mm;
+  background-color: #fff;
+}
+
+.right-main-container-sheet {
+  width: 80%;
+}
+
+.sidebar {
+  width: 20%;
+}
+
 }

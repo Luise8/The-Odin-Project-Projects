@@ -16,8 +16,11 @@ class App extends Component {
     return (
       <div>
         <div className="main-container">
+        <div className="main-container-sheet">
+          <div className="sidebar">
           <Sidebar />
-          <div className="right-main-container">
+          </div>
+          <div className="right-main-container-sheet">
             <MainInformation />
             <Education />
             <Experience />
