@@ -14,11 +14,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div className="main-container">
+      <div className="main-container">
+        <button id="print-btn" onClick={() => window.print()}>
+          Print
+        </button>
         <div className="main-container-sheet">
           <div className="sidebar">
-          <Sidebar />
+            <Sidebar />
           </div>
           <div className="right-main-container-sheet">
             <MainInformation />

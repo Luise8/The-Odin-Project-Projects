@@ -20,4 +20,12 @@
   width: 20%;
 }
 
+#print-btn {
+  position: fixed;
+  top: 35%;
+  right: 30px;
+  height: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
 }
