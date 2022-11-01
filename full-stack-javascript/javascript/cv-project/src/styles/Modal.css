@@ -13,6 +13,7 @@ body.active-modal {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.61);
   display: none;
+  z-index: 10000;
 }
 
 .active {
