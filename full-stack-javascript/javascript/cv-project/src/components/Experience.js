@@ -6,6 +6,7 @@ import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import uniqid from "uniqid";
 import "../styles/SectionHeader.css";
+import example from "./example";
 
 class Experience extends Component {
   constructor(props) {
@@ -17,13 +18,23 @@ class Experience extends Component {
         { id: uniqid() },
         { key: "positionTitle", text: "", tag: "h3", className: "title" },
         { key: "companyName", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
         { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
         { key: "mainTasks", text: "", tag: "p", className: "para" },
       ],
 
-      expList: [], // Array of items
+      expList: [...example.experience], // Array of items
       isActive: false, // Modal boolean
       isActiveEdit: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
@@ -57,8 +68,18 @@ class Experience extends Component {
         { id: uniqid() },
         { key: "positionTitle", text: "", tag: "h3", className: "title" },
         { key: "companyName", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
         { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
         { key: "mainTasks", text: "", tag: "p", className: "para" },
       ],
@@ -74,8 +95,18 @@ class Experience extends Component {
         { id: uniqid() },
         { key: "positionTitle", text: "casa", tag: "h3", className: "title" },
         { key: "companyName", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
         { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
         { key: "mainTasks", text: "", tag: "p", className: "para" },
       ],
@@ -100,8 +131,18 @@ class Experience extends Component {
         { id: uniqid() },
         { key: "positionTitle", text: "casa", tag: "h3", className: "title" },
         { key: "companyName", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
         { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
         { key: "mainTasks", text: "", tag: "p", className: "para" },
       ],
@@ -148,13 +189,13 @@ class Experience extends Component {
           key: "dateFrom",
           text: updateItem[3].text,
           tag: "p",
-          className: "para lowOpacity",
+          className: "para lowOpacity date",
         },
         {
           key: "dateTo",
           text: updateItem[4].text,
           tag: "p",
-          className: "para lowOpacity",
+          className: "para lowOpacity date dateTo",
         },
         {
           key: "Location",
@@ -184,8 +225,18 @@ class Experience extends Component {
         { id: uniqid() },
         { key: "positionTitle", text: "", tag: "h3", className: "title" },
         { key: "companyName", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
         { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
         { key: "mainTasks", text: "", tag: "p", className: "para" },
       ],
@@ -209,8 +260,18 @@ class Experience extends Component {
         { id: uniqid() },
         { key: "positionTitle", text: "", tag: "h3", className: "title" },
         { key: "companyName", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
         { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
         { key: "mainTasks", text: "", tag: "p", className: "para" },
       ],

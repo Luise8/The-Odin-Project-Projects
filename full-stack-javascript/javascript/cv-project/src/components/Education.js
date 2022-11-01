@@ -5,6 +5,7 @@ import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import uniqid from "uniqid";
 import "../styles/SectionHeader.css";
+import example from "./example";
 
 class Education extends Component {
   constructor(props) {
@@ -16,10 +17,20 @@ class Education extends Component {
         { id: uniqid() },
         { key: "institution", text: "", tag: "h3", className: "title" },
         { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
       ],
-      eduList: [], // Array of items
+      eduList: [...example.education], // Array of items
       isActive: false, // Modal boolean
       isActiveEdit: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
@@ -54,8 +65,18 @@ class Education extends Component {
         { id: uniqid() },
         { key: "institution", text: "", tag: "h3", className: "title" },
         { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
       ],
       isActive: !this.state.isActive,
     });
@@ -138,13 +159,13 @@ class Education extends Component {
           key: "dateFrom",
           text: updateItem[3].text,
           tag: "p",
-          className: "para lowOpacity",
+          className: "para lowOpacity date",
         },
         {
           key: "dateTo",
           text: updateItem[4].text,
           tag: "p",
-          className: "para lowOpacity",
+          className: "para lowOpacity date dateTo",
         },
       ],
       itemSelectedIndex: index,
@@ -185,8 +206,18 @@ class Education extends Component {
         { id: uniqid() },
         { key: "institution", text: "", tag: "h3", className: "title" },
         { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className: "para lowOpacity date dateTo",
+        },
       ],
       isActiveEdit: false,
       itemSelectedIndex: -1,

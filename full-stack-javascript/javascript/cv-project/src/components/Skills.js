@@ -5,6 +5,7 @@ import OverviewArrayObjects from "./OverviewArrayObjects";
 import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import uniqid from "uniqid";
+import example from "./example";
 
 class Skills extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Skills extends Component {
         { id: uniqid() },
         { key: "skill", text: "", tag: "p", className: "para" },
       ],
-      skillList: [], // Array of items
+      skillList: [...example.skills], // Array of items
       isActive: false, // Modal boolean
       isActiveEdit: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
