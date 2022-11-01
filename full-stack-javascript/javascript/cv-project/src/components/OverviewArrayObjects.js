@@ -30,25 +30,34 @@ class OverviewArrayObjects extends Component {
         {itemList.map((item, i) => {
           return (
             <li className="item-li" key={item[0].id}>
-              {item.map((element, i) => {
-                return element.text ? (
-                  <element.tag key={element.key}>{element.text}</element.tag>
-                ) : (
-                  ""
-                );
-              })}
-              <button
-                className="btn-edit-exp"
-                onClick={(e) => removeItem(item[0].id)}
-              >
-                Delete
-              </button>
-              <button
-                className="btn-edit-exp"
-                onClick={(e) => changeItem(item[0].id)}
-              >
-                Edit
-              </button>
+              <div className="container-elements-overview">
+                {item.map((element, i) => {
+                  return element.text ? (
+                    <element.tag
+                      className={element.className}
+                      key={element.key}
+                    >
+                      {element.text}
+                    </element.tag>
+                  ) : (
+                    ""
+                  );
+                })}
+              </div>
+              <div className="container-btn-overview">
+                <button
+                  className="btn-edit-exp"
+                  onClick={(e) => removeItem(item[0].id)}
+                >
+                  Delete
+                </button>
+                <button
+                  className="btn-edit-exp"
+                  onClick={(e) => changeItem(item[0].id)}
+                >
+                  Edit
+                </button>
+              </div>
             </li>
           );
         })}

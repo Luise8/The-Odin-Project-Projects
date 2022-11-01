@@ -1,1 +1,41 @@
+.item-li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding-top: 10px;
+}
 
+.item-li:hover .container-btn-overview {
+  display: flex;
+}
+
+.lowOpacity {
+  opacity: 0.6;
+}
+
+.date {
+  display: inline-flex;
+  font-size: 13px;
+}
+
+.dateTo {
+  margin-left: 10px;
+}
+
+.dateTo::before {
+  content: "-";
+  padding-right: 10px;
+}
+
+.container-btn-overview {
+  display: none;
+  position: absolute;
+  left: 100px;
+  gap: 10px;
+}
+
+.btn-edit-exp {
+  height: 30px;
+  display: block;
+}
