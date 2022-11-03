@@ -1,4 +1,5 @@
 const example = {
+  imageProfile: "../logo192.png",
   skills: [
     [
       { id: "skill-1" },
