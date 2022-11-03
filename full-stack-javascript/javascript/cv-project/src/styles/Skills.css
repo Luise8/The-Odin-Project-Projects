@@ -1,3 +1,7 @@
+.container-skills {
+  flex-grow: 1;
+}
+
 .container-header-skills {
   display: flex;
   justify-content: center;

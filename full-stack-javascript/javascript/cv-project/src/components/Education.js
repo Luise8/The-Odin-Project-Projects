@@ -4,7 +4,7 @@ import Overview from "./OverviewArrayObjects";
 import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import uniqid from "uniqid";
-import "../styles/SectionHeader.css";
+import "../styles/Section.css";
 import example from "./example";
 
 class Education extends Component {
@@ -273,7 +273,7 @@ class Education extends Component {
     }
 
     return (
-      <div>
+      <div className="container-section education">
         <div className="section-header">
           <h2>Education</h2>
           <button className="btn add-edu" onClick={this.handleToggle}>

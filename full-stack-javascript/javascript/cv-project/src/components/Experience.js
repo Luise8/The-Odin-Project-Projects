@@ -5,7 +5,7 @@ import Overview from "./OverviewArrayObjects";
 import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import uniqid from "uniqid";
-import "../styles/SectionHeader.css";
+import "../styles/Section.css";
 import example from "./example";
 
 class Experience extends Component {
@@ -343,7 +343,7 @@ class Experience extends Component {
     }
 
     return (
-      <div>
+      <div className="container-section experience">
         <div className="section-header">
           <h2>Work Experience</h2>
           <button className="btn add-exp" onClick={this.handleToggle}>
@@ -353,7 +353,6 @@ class Experience extends Component {
             DELETE ALL
           </button>
         </div>
-
         {/* Show all the items experience on the screen */}
         <Overview
           itemList={expList}
