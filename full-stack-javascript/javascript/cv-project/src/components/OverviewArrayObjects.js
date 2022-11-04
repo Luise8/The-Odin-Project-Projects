@@ -46,13 +46,13 @@ class OverviewArrayObjects extends Component {
               </div>
               <div className="container-btn-overview">
                 <button
-                  className="btn-edit-exp"
+                  className="btn-edit"
                   onClick={(e) => removeItem(item[0].id)}
                 >
                   Delete
                 </button>
                 <button
-                  className="btn-edit-exp"
+                  className="btn-edit"
                   onClick={(e) => changeItem(item[0].id)}
                 >
                   Edit
