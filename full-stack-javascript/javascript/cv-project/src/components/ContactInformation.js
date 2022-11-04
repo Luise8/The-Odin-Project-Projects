@@ -164,11 +164,15 @@ class ContactInformation extends Component {
             </div>
             <div>
               <h3>LINKEDIN</h3>
+              <a href={itemOverview[3].text} target="_blank">
               <p>{itemOverview[3].text}</p>
+              </a>
             </div>
             <div>
               <h3>WEBSITE</h3>
+              <a href={itemOverview[4].text} target="_blank">
               <p>{itemOverview[4].text}</p>
+              </a>
             </div>
           </div>
           <div className="container-btn-contact-inf">

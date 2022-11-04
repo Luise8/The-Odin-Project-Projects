@@ -38,3 +38,8 @@
 .btn-contact-inf {
   height: 30px;
 }
+
+.container-contact-inf-child a {
+  color: #000;
+  text-decoration: none;
+}
