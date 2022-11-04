@@ -7,12 +7,17 @@
 .section-header {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 
-.btn {
-  display: none;
-}
-
-.section-header:hover .btn {
+.section-header:hover .container-btn-section-header {
   display: flex;
+  gap: 10px;
+}
+
+.container-btn-section-header {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 5px;
 }

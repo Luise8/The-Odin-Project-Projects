@@ -346,12 +346,17 @@ class Experience extends Component {
       <div className="container-section experience">
         <div className="section-header">
           <h2>Work Experience</h2>
-          <button className="btn add-exp" onClick={this.handleToggle}>
-            ADD
-          </button>
-          <button className="btn dlt-exp" onClick={this.handleToggleDeleteAll}>
-            DELETE ALL
-          </button>
+          <div className="container-btn-section-header">
+            <button className="btn add-exp" onClick={this.handleToggle}>
+              ADD
+            </button>
+            <button
+              className="btn dlt-exp"
+              onClick={this.handleToggleDeleteAll}
+            >
+              DELETE ALL
+            </button>
+          </div>
         </div>
         {/* Show all the items experience on the screen */}
         <Overview

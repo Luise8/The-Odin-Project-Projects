@@ -276,12 +276,17 @@ class Education extends Component {
       <div className="container-section education">
         <div className="section-header">
           <h2>Education</h2>
-          <button className="btn add-edu" onClick={this.handleToggle}>
-            ADD
-          </button>
-          <button className="btn dlt-edu" onClick={this.handleToggleDeleteAll}>
-            DELETE ALL
-          </button>
+          <div className="container-btn-section-header">
+            <button className="btn add-edu" onClick={this.handleToggle}>
+              ADD
+            </button>
+            <button
+              className="btn dlt-edu"
+              onClick={this.handleToggleDeleteAll}
+            >
+              DELETE ALL
+            </button>
+          </div>
         </div>
 
         {/* Show all the items Education on the screen */}
