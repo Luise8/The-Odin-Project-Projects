@@ -6,7 +6,7 @@ const example = {
     { key: "linkedin", text: "Add your Linkedin" },
     { key: "website", text: "Add your website" },
   ],
-  imageProfile: "../logo192.png",
+  imageProfile: "/images/avatar.png",
   mainInformation: [
     { key: "fullName", text: "Add your full name" },
     {
