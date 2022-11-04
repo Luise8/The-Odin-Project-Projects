@@ -1,5 +1,21 @@
 const example = {
+  contactInformation: [
+    { key: "address", text: "Add your address" },
+    { key: "phoneNumber", text: "Add your phone number" },
+    { key: "email", text: "Add your email" },
+    { key: "linkedin", text: "Add your Linkedin" },
+    { key: "website", text: "Add your website" },
+  ],
   imageProfile: "../logo192.png",
+  mainInformation: [
+    { key: "fullName", text: "Add your full name" },
+    {
+      key: "positionTitle",
+      text: "Add your Position Title",
+    },
+    { key: "resume", text: "Add your resume" },
+  ],
+
   skills: [
     [
       { id: "skill-1" },

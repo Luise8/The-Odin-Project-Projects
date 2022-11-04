@@ -3,14 +3,7 @@ import React, { Component } from "react";
 import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import "../styles/ContactInformation.css";
-
-const DEFAULTITEMINFORMATION = [
-  { key: "address", text: "Add your address" },
-  { key: "phoneNumber", text: "Add your phone number" },
-  { key: "email", text: "Add your email" },
-  { key: "linkedin", text: "Add your Linkedin" },
-  { key: "website", text: "Add your website" },
-];
+import example from "./example";
 
 class ContactInformation extends Component {
   constructor() {
@@ -18,8 +11,8 @@ class ContactInformation extends Component {
 
     this.state = {
       // Item
-      itemContactInformation: [...DEFAULTITEMINFORMATION],
-      itemOverview: [...DEFAULTITEMINFORMATION],
+      itemContactInformation: [...example.contactInformation],
+      itemOverview: [...example.contactInformation],
       isActive: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
     };
@@ -67,7 +60,7 @@ class ContactInformation extends Component {
     e.preventDefault();
     let newItem = this.state.itemContactInformation.map((item, i) => {
       if (item.text == "") {
-        item.text = DEFAULTITEMINFORMATION[i].text;
+        item.text = example.contactInformation[i].text;
       }
       return item;
     });
@@ -80,7 +73,7 @@ class ContactInformation extends Component {
   handleToggleDeleteAll = (e) => {
     e.preventDefault();
     this.state.itemOverview.forEach((item, i) => {
-      if (item.text !== DEFAULTITEMINFORMATION[i].text) {
+      if (item.text !== example.contactInformation[i].text) {
         this.setState({
           activeDeleteAll: !this.state.activeDeleteAll,
         });
@@ -91,7 +84,7 @@ class ContactInformation extends Component {
   clearAll = (e) => {
     e.preventDefault();
     this.setState({
-      itemOverview: [...DEFAULTITEMINFORMATION],
+      itemOverview: [...example.contactInformation],
       activeDeleteAll: !this.state.activeDeleteAll,
     });
   };
@@ -165,13 +158,13 @@ class ContactInformation extends Component {
             <div>
               <h3>LINKEDIN</h3>
               <a href={itemOverview[3].text} target="_blank">
-              <p>{itemOverview[3].text}</p>
+                <p>{itemOverview[3].text}</p>
               </a>
             </div>
             <div>
               <h3>WEBSITE</h3>
               <a href={itemOverview[4].text} target="_blank">
-              <p>{itemOverview[4].text}</p>
+                <p>{itemOverview[4].text}</p>
               </a>
             </div>
           </div>

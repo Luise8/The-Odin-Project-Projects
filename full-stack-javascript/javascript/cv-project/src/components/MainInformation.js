@@ -3,15 +3,7 @@ import React, { Component } from "react";
 import ModalForm from "./ModalForm";
 import ModalConfirmation from "./ModalConfirmation";
 import "../styles/MainInformation.css";
-
-const DEFAULTITEMINFORMATION = [
-  { key: "fullName", text: "Add your full name" },
-  {
-    key: "positionTitle",
-    text: "Add your Position Title",
-  },
-  { key: "resume", text: "Add your resume" },
-];
+import example from "./example";
 
 class MainInformation extends Component {
   constructor() {
@@ -19,8 +11,8 @@ class MainInformation extends Component {
 
     this.state = {
       // Item
-      itemMainInformation: [...DEFAULTITEMINFORMATION],
-      itemOverview: [...DEFAULTITEMINFORMATION],
+      itemMainInformation: [...example.mainInformation],
+      itemOverview: [...example.mainInformation],
       isActive: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
     };
@@ -52,7 +44,7 @@ class MainInformation extends Component {
     e.preventDefault();
     let newItem = this.state.itemMainInformation.map((item, i) => {
       if (item.text == "") {
-        item.text = DEFAULTITEMINFORMATION[i].text;
+        item.text = example.mainInformation[i].text;
       }
       return item;
     });
@@ -73,7 +65,7 @@ class MainInformation extends Component {
   handleToggleDeleteAll = (e) => {
     e.preventDefault();
     this.state.itemOverview.forEach((item, i) => {
-      if (item.text !== DEFAULTITEMINFORMATION[i].text) {
+      if (item.text !== example.mainInformation[i].text) {
         this.setState({
           activeDeleteAll: !this.state.activeDeleteAll,
         });
@@ -83,7 +75,7 @@ class MainInformation extends Component {
   clearAll = (e) => {
     e.preventDefault();
     this.setState({
-      itemOverview: [...DEFAULTITEMINFORMATION],
+      itemOverview: [...example.mainInformation],
       activeDeleteAll: !this.state.activeDeleteAll,
     });
   };
