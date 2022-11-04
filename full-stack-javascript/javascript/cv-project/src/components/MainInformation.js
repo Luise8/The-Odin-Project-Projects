@@ -140,12 +140,17 @@ class MainInformation extends Component {
             <h2>{itemOverview[1].text}</h2>
             <p>{itemOverview[2].text}</p>
           </div>
-          <button className="btn-main-inf" onClick={this.changeItem}>
-            EDIT
-          </button>
-          <button className="btn-main-inf" onClick={this.handleToggleDeleteAll}>
-            DEFAULT RESTORE
-          </button>
+          <div className="container-btn-main-inf">
+            <button className="btn-main-inf" onClick={this.changeItem}>
+              EDIT
+            </button>
+            <button
+              className="btn-main-inf"
+              onClick={this.handleToggleDeleteAll}
+            >
+              DEFAULT RESTORE
+            </button>
+          </div>
         </div>
         <ModalConfirmation
           modalActive={activeDeleteAll}

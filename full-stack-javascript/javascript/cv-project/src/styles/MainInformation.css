@@ -3,12 +3,16 @@
   gap: 14px;
   border-bottom: 3px solid rgb(49, 49, 49);
   padding-bottom: 5px;
+  position: relative;
 }
-.container-main-information:hover .btn-main-inf {
+.container-main-information:hover .container-btn-main-inf {
   display: flex;
+  gap: 10px;
 }
 
-.btn-main-inf {
+.container-btn-main-inf {
   display: none;
-  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 5px;
 }
