@@ -62,6 +62,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+  padding-top: 40px;
   background-color: var(--right-main-Bg-color-sidebar-color);
 }
 
@@ -71,6 +72,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   padding-right: 10px;
   background-color: var(--sidebar-Bg-color);
   box-sizing: border-box;
+  border-right: 10px solid var(--borders);
   color: var(--right-main-Bg-color-sidebar-color);
 }
 
