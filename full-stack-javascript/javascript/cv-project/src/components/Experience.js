@@ -16,22 +16,43 @@ class Experience extends Component {
       // Item
       expItem: [
         { id: uniqid() },
-        { key: "positionTitle", text: "", tag: "h3", className: "title" },
-        { key: "companyName", text: "", tag: "p", className: "para" },
+        {
+          key: "positionTitle",
+          text: "",
+          tag: "h3",
+          className: "title-third right-main-title-third",
+        },
+        {
+          key: "companyName",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
-        { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "mainTasks", text: "", tag: "p", className: "para" },
+        {
+          key: "Location",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph",
+        },
+        {
+          key: "mainTasks",
+          text: "",
+          tag: "p",
+          className: "paragraph right-main-paragraph",
+        },
       ],
 
       expList: [...example.experience], // Array of items
@@ -66,22 +87,43 @@ class Experience extends Component {
     this.setState({
       expItem: [
         { id: uniqid() },
-        { key: "positionTitle", text: "", tag: "h3", className: "title" },
-        { key: "companyName", text: "", tag: "p", className: "para" },
+        {
+          key: "positionTitle",
+          text: "",
+          tag: "h3",
+          className: "title-third right-main-title-third",
+        },
+        {
+          key: "companyName",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
-        { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "mainTasks", text: "", tag: "p", className: "para" },
+        {
+          key: "Location",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph",
+        },
+        {
+          key: "mainTasks",
+          text: "",
+          tag: "p",
+          className: "paragraph right-main-paragraph",
+        },
       ],
       isActive: !this.state.isActive,
     });
@@ -93,22 +135,43 @@ class Experience extends Component {
       expList: this.state.expList.concat([this.state.expItem]),
       expItem: [
         { id: uniqid() },
-        { key: "positionTitle", text: "casa", tag: "h3", className: "title" },
-        { key: "companyName", text: "", tag: "p", className: "para" },
+        {
+          key: "positionTitle",
+          text: "",
+          tag: "h3",
+          className: "title-third right-main-title-third",
+        },
+        {
+          key: "companyName",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
-        { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "mainTasks", text: "", tag: "p", className: "para" },
+        {
+          key: "Location",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph",
+        },
+        {
+          key: "mainTasks",
+          text: "",
+          tag: "p",
+          className: "paragraph right-main-paragraph",
+        },
       ],
       isActive: !this.state.isActive,
     });
@@ -129,22 +192,43 @@ class Experience extends Component {
     this.setState({
       expItem: [
         { id: uniqid() },
-        { key: "positionTitle", text: "casa", tag: "h3", className: "title" },
-        { key: "companyName", text: "", tag: "p", className: "para" },
+        {
+          key: "positionTitle",
+          text: "",
+          tag: "h3",
+          className: "title-third right-main-title-third",
+        },
+        {
+          key: "companyName",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
-        { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "mainTasks", text: "", tag: "p", className: "para" },
+        {
+          key: "Location",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph",
+        },
+        {
+          key: "mainTasks",
+          text: "",
+          tag: "p",
+          className: "paragraph right-main-paragraph",
+        },
       ],
       expList: [],
       activeDeleteAll: false,
@@ -177,37 +261,38 @@ class Experience extends Component {
           key: "positionTitle",
           text: updateItem[1].text,
           tag: "h3",
-          className: "title",
+          className: "title-third right-main-title-third",
         },
         {
           key: "companyName",
           text: updateItem[2].text,
-          tag: "p",
-          className: "para",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
         },
         {
           key: "dateFrom",
           text: updateItem[3].text,
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: updateItem[4].text,
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
         {
           key: "Location",
           text: updateItem[5].text,
           tag: "p",
-          className: "para lowOpacity",
+          className: "smallest-paragraph right-main-smallest-paragraph",
         },
         {
           key: "mainTasks",
           text: updateItem[6].text,
           tag: "p",
-          className: "para",
+          className: "paragraph right-main-paragraph",
         },
       ],
       itemSelectedIndex: index,
@@ -223,22 +308,43 @@ class Experience extends Component {
       expList: [...newList],
       expItem: [
         { id: uniqid() },
-        { key: "positionTitle", text: "", tag: "h3", className: "title" },
-        { key: "companyName", text: "", tag: "p", className: "para" },
+        {
+          key: "positionTitle",
+          text: "",
+          tag: "h3",
+          className: "title-third right-main-title-third",
+        },
+        {
+          key: "companyName",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
-        { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "mainTasks", text: "", tag: "p", className: "para" },
+        {
+          key: "Location",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph",
+        },
+        {
+          key: "mainTasks",
+          text: "",
+          tag: "p",
+          className: "paragraph right-main-paragraph",
+        },
       ],
       isActive: false,
     });
@@ -258,22 +364,43 @@ class Experience extends Component {
       expList: [...newList],
       expItem: [
         { id: uniqid() },
-        { key: "positionTitle", text: "", tag: "h3", className: "title" },
-        { key: "companyName", text: "", tag: "p", className: "para" },
+        {
+          key: "positionTitle",
+          text: "",
+          tag: "h3",
+          className: "title-third right-main-title-third",
+        },
+        {
+          key: "companyName",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
-        { key: "Location", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "mainTasks", text: "", tag: "p", className: "para" },
+        {
+          key: "Location",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph",
+        },
+        {
+          key: "mainTasks",
+          text: "",
+          tag: "p",
+          className: "paragraph right-main-paragraph",
+        },
       ],
       isActiveEdit: false,
       itemSelectedIndex: -1,
@@ -345,7 +472,7 @@ class Experience extends Component {
     return (
       <div className="container-section experience">
         <div className="section-header">
-          <h2>Work Experience</h2>
+          <h2 className="title-section">EXPERIENCE</h2>
           <div className="container-btn-section-header">
             <button className="btn add-exp" onClick={this.handleToggle}>
               ADD

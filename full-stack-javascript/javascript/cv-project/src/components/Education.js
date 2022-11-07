@@ -15,19 +15,30 @@ class Education extends Component {
       // Item
       eduItem: [
         { id: uniqid() },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
+        {
+          key: "institution",
+          text: "",
+          tag: "h3",
+          className: "second-title right-main-second-title",
+        },
+        {
+          key: "degree",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
       ],
       eduList: [...example.education], // Array of items
@@ -63,19 +74,30 @@ class Education extends Component {
     this.setState({
       eduItem: [
         { id: uniqid() },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
+        {
+          key: "institution",
+          text: "",
+          tag: "h3",
+          className: "second-title right-main-second-title",
+        },
+        {
+          key: "degree",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
       ],
       isActive: !this.state.isActive,
@@ -88,10 +110,31 @@ class Education extends Component {
       eduList: this.state.eduList.concat([this.state.eduItem]),
       eduItem: [
         { id: uniqid() },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "institution",
+          text: "",
+          tag: "h3",
+          className: "second-title right-main-second-title",
+        },
+        {
+          key: "degree",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
+        },
       ],
       isActive: !this.state.isActive,
     });
@@ -112,10 +155,31 @@ class Education extends Component {
     this.setState({
       eduItem: [
         { id: uniqid() },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "institution",
+          text: "",
+          tag: "h3",
+          className: "second-title right-main-second-title",
+        },
+        {
+          key: "degree",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
+        },
       ],
       eduList: [],
       activeDeleteAll: false,
@@ -147,25 +211,27 @@ class Education extends Component {
           key: "institution",
           text: updateItem[1].text,
           tag: "h3",
-          className: "title",
+          className: "second-title right-main-second-title",
         },
         {
           key: "degree",
           text: updateItem[2].text,
-          tag: "p",
-          className: "para",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
         },
         {
           key: "dateFrom",
           text: updateItem[3].text,
           tag: "p",
-          className: "para lowOpacity date",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: updateItem[4].text,
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
       ],
       itemSelectedIndex: index,
@@ -181,10 +247,31 @@ class Education extends Component {
       eduList: [...newList],
       eduItem: [
         { id: uniqid() },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
-        { key: "dateFrom", text: "", tag: "p", className: "para lowOpacity" },
-        { key: "dateTo", text: "", tag: "p", className: "para lowOpacity" },
+        {
+          key: "institution",
+          text: "",
+          tag: "h3",
+          className: "second-title right-main-second-title",
+        },
+        {
+          key: "degree",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
+        {
+          key: "dateFrom",
+          text: "",
+          tag: "p",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
+        },
+        {
+          key: "dateTo",
+          text: "",
+          tag: "p",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
+        },
       ],
       isActive: false,
     });
@@ -204,19 +291,30 @@ class Education extends Component {
       eduList: [...newList],
       eduItem: [
         { id: uniqid() },
-        { key: "institution", text: "", tag: "h3", className: "title" },
-        { key: "degree", text: "", tag: "p", className: "para" },
+        {
+          key: "institution",
+          text: "",
+          tag: "h3",
+          className: "second-title right-main-second-title",
+        },
+        {
+          key: "degree",
+          text: "",
+          tag: "h4",
+          className: "title-fourth right-main-title-fourth",
+        },
         {
           key: "dateFrom",
           text: "",
           tag: "p",
-          className: "para lowOpacity date",
+          className: "smallest-paragraph right-main-smallest-paragraph date",
         },
         {
           key: "dateTo",
           text: "",
           tag: "p",
-          className: "para lowOpacity date dateTo",
+          className:
+            "smallest-paragraph right-main-smallest-paragraph date dateTo",
         },
       ],
       isActiveEdit: false,
@@ -275,7 +373,7 @@ class Education extends Component {
     return (
       <div className="container-section education">
         <div className="section-header">
-          <h2>Education</h2>
+          <h2 className="title-section ">EDUCATION</h2>
           <div className="container-btn-section-header">
             <button className="btn add-edu" onClick={this.handleToggle}>
               ADD
