@@ -8,6 +8,11 @@
   position: relative;
 }
 
+.container-title-skills h3 {
+  font-size: var(--title-third-font-size);
+  font-weight: var(--sidebar-title-third-font-weight);
+}
+
 /* BUTTONS */
 .container-btn-skills {
   position: absolute;

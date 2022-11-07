@@ -15,7 +15,12 @@ class Skills extends Component {
       // Item
       skillItem: [
         { id: uniqid() },
-        { key: "skill", text: "", tag: "p", className: "para" },
+        {
+          key: "skill",
+          text: "",
+          tag: "p",
+          className: "paragraph special-paragraph",
+        },
       ],
       skillList: [...example.skills], // Array of items
       isActive: false, // Modal boolean
@@ -50,7 +55,12 @@ class Skills extends Component {
     this.setState({
       skillItem: [
         { id: uniqid() },
-        { key: "skill", text: "", tag: "p", className: "para" },
+        {
+          key: "skill",
+          text: "",
+          tag: "p",
+          className: "paragraph special-paragraph",
+        },
       ],
       isActive: !this.state.isActive,
     });
@@ -62,7 +72,12 @@ class Skills extends Component {
       skillList: this.state.skillList.concat([this.state.skillItem]),
       skillItem: [
         { id: uniqid() },
-        { key: "skill", text: "", tag: "p", className: "para" },
+        {
+          key: "skill",
+          text: "",
+          tag: "p",
+          className: "paragraph special-paragraph",
+        },
       ],
       isActive: !this.state.isActive,
     });
@@ -83,7 +98,12 @@ class Skills extends Component {
     this.setState({
       skillItem: [
         { id: uniqid() },
-        { key: "skill", text: "", tag: "p", className: "para" },
+        {
+          key: "skill",
+          text: "",
+          tag: "p",
+          className: "paragraph special-paragraph",
+        },
       ],
       skillList: [],
       activeDeleteAll: false,
@@ -116,7 +136,7 @@ class Skills extends Component {
           key: "skill",
           text: updateItem[1].text,
           tag: "p",
-          className: "para",
+          className: "paragraph special-paragraph",
         },
       ],
       itemSelectedIndex: index,
@@ -132,7 +152,12 @@ class Skills extends Component {
       skillList: [...newList],
       skillItem: [
         { id: uniqid() },
-        { key: "skill", text: "", tag: "p", className: "para" },
+        {
+          key: "skill",
+          text: "",
+          tag: "p",
+          className: "paragraph special-paragraph",
+        },
       ],
       isActive: false,
     });
@@ -152,7 +177,12 @@ class Skills extends Component {
       skillList: [...newList],
       skillItem: [
         { id: uniqid() },
-        { key: "skill", text: "", tag: "p", className: "para" },
+        {
+          key: "skill",
+          text: "",
+          tag: "p",
+          className: "paragraph special-paragraph",
+        },
       ],
       isActiveEdit: false,
       itemSelectedIndex: -1,
