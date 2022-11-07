@@ -1,7 +1,7 @@
 .container-main-information {
   display: flex;
   gap: 14px;
-  border-bottom: 3px solid rgb(49, 49, 49);
+  border-bottom: 3px solid var(--borders);
   padding-bottom: 5px;
   position: relative;
 }
@@ -15,4 +15,22 @@
   position: absolute;
   top: 0;
   right: 5px;
+}
+
+.container-main-information h1 {
+  font-size: var(--first-title-font-size);
+  font-weight: var(--right-main-first-title-font-weight);
+  color: var(--right-main-first-title-color);
+}
+
+.container-main-information h3 {
+  font-size: var(--title-third-font-size);
+  font-weight: var(--right-main-title-third-special-font-weight);
+  color: var(--right-main-title-third-special-color);
+}
+
+.container-main-information p {
+  font-size: var(--paragraph-font-size);
+  font-weight: var(--paragraph-font-weight);
+  color: var(--right-main-paragraph-color);
 }

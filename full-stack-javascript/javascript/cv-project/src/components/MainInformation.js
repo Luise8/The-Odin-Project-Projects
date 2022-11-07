@@ -129,7 +129,7 @@ class MainInformation extends Component {
         <div className="container-main-information">
           <div>
             <h1>{itemOverview[0].text}</h1>
-            <h2>{itemOverview[1].text}</h2>
+            <h3>{itemOverview[1].text}</h3>
             <p>{itemOverview[2].text}</p>
           </div>
           <div className="container-btn-main-inf">
