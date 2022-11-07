@@ -6,6 +6,18 @@
   padding-top: 10px;
 }
 
+/* Buttons */
+.item-li .container-btn-overview {
+  display: none;
+  position: absolute;
+  left: 100px;
+  gap: 10px;
+}
+
+.item-li .btn-edit {
+  display: block;
+}
+
 .item-li:hover .container-btn-overview {
   display: flex;
 }
