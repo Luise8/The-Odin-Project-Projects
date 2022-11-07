@@ -51,7 +51,6 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   display: flex;
   width: 215.9mm;
   height: 279.4mm;
-  background-color: #fff;
   z-index: 1;
 }
 
@@ -63,14 +62,16 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+  background-color: var(--right-main-Bg-color-sidebar-color);
 }
 
 .sidebar {
   width: 28%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: rgb(61, 61, 224);
+  background-color: var(--sidebar-Bg-color);
   box-sizing: border-box;
+  color: var(--right-main-Bg-color-sidebar-color);
 }
 
 #print-btn {
