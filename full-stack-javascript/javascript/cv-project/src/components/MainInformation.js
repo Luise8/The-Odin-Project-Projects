@@ -11,8 +11,8 @@ class MainInformation extends Component {
 
     this.state = {
       // Item
-      itemMainInformation: [...example.mainInformation],
-      itemOverview: [...example.mainInformation],
+      itemMainInformation: [...example.mainInformation], // To handle change in the form
+      itemOverview: [...example.mainInformation], // To display on screen
       isActive: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
     };
@@ -23,6 +23,23 @@ class MainInformation extends Component {
     this.handleToggleDeleteAll = this.handleToggleDeleteAll.bind(this);
     this.clearAll = this.clearAll.bind(this);
   }
+
+  // To handle the input changes in the form
+  handleChange = (e) => {
+    let item = [...this.state.itemMainInformation];
+    let inputSelected = e.target.value;
+    item[e.target.getAttribute("data-index-state-value")].text = inputSelected;
+    this.setState({
+      itemMainInformation: [...item],
+    });
+  };
+
+  // To change iformation
+  handleToggle = () => {
+    this.setState({
+      isActive: !this.state.isActive,
+    });
+  };
 
   changeItem = () => {
     this.handleToggle();
@@ -53,15 +70,8 @@ class MainInformation extends Component {
       isActive: !this.state.isActive,
     });
   };
-  handleChange = (e) => {
-    let item = [...this.state.itemMainInformation];
-    let inputSelected = e.target.value;
-    item[e.target.getAttribute("data-index-state-value")].text = inputSelected;
-    this.setState({
-      itemMainInformation: [...item],
-    });
-  };
 
+  // To restore to default information
   handleToggleDeleteAll = (e) => {
     e.preventDefault();
     this.state.itemOverview.forEach((item, i) => {
@@ -77,12 +87,6 @@ class MainInformation extends Component {
     this.setState({
       itemOverview: [...example.mainInformation],
       activeDeleteAll: !this.state.activeDeleteAll,
-    });
-  };
-
-  handleToggle = () => {
-    this.setState({
-      isActive: !this.state.isActive,
     });
   };
 

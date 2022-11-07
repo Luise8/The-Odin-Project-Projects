@@ -1,19 +1,22 @@
+/* Biggest container component */
 .container-skills {
   flex-grow: 1;
 }
 
+/* Container of section without items */
 .container-header-skills {
   display: flex;
   justify-content: center;
   position: relative;
 }
 
+/* Title */
 .container-title-skills h3 {
   font-size: var(--title-third-font-size);
   font-weight: var(--sidebar-title-third-font-weight);
 }
 
-/* BUTTONS */
+/* Buttons */
 .container-btn-skills {
   position: absolute;
   right: 0;

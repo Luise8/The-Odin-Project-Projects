@@ -11,8 +11,8 @@ class ContactInformation extends Component {
 
     this.state = {
       // Item
-      itemContactInformation: [...example.contactInformation],
-      itemOverview: [...example.contactInformation],
+      itemContactInformation: [...example.contactInformation], // To handle change in the form
+      itemOverview: [...example.contactInformation], //To display on screen
       isActive: false, // Modal boolean
       activeDeleteAll: false, // Modal boolean
     };
@@ -25,6 +25,7 @@ class ContactInformation extends Component {
     this.clearAll = this.clearAll.bind(this);
   }
 
+  // To handle the input changes in the form
   handleChange = (e) => {
     let item = [...this.state.itemContactInformation];
     let inputSelected = e.target.value;
@@ -34,6 +35,7 @@ class ContactInformation extends Component {
     });
   };
 
+  // To change iformation
   handleToggle = () => {
     this.setState({
       isActive: !this.state.isActive,
@@ -70,6 +72,7 @@ class ContactInformation extends Component {
     });
   };
 
+  // To restore to default information
   handleToggleDeleteAll = (e) => {
     e.preventDefault();
     this.state.itemOverview.forEach((item, i) => {

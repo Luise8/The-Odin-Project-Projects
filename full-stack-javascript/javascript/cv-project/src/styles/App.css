@@ -40,6 +40,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   --right-main-smallest-paragraph-color: var(--fourth-color);
 }
 
+/* Container that defines the background around the sheet */
 .main-container {
   display: flex;
   justify-content: center;
@@ -47,6 +48,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   position: relative;
 }
 
+/* Sheet */
 .main-container-sheet {
   display: flex;
   width: 215.9mm;
@@ -54,6 +56,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   z-index: 1;
 }
 
+/* Right conatiner */
 .right-main-container-sheet {
   width: 72%;
   display: flex;
@@ -66,6 +69,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   background-color: var(--right-main-Bg-color-sidebar-color);
 }
 
+/* Sidebar element */
 .sidebar {
   width: 28%;
   padding-left: 10px;
@@ -76,6 +80,7 @@ Fifth color: #adb1b8 sidebar paragraph special Bg-c
   color: var(--right-main-Bg-color-sidebar-color);
 }
 
+/* Print button */
 #print-btn {
   position: fixed;
   top: 35%;

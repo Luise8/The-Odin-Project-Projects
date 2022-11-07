@@ -1,4 +1,5 @@
-// Skills.js
+// ImageProfile.js
+// Component to can add a image profile
 import React, { Component } from "react";
 import "../styles/ImageProfile.css";
 import example from "./example";
@@ -33,15 +34,15 @@ class ImageProfile extends Component {
   render() {
     const { activeImage, directionImage } = this.state;
 
-    // object that has inputsList and btnList for ModalForm component.
-
     return (
       <>
         <div className="conatiner-profile-image">
           <div className="conatiner-profile-image-space"></div>
+          {/* Switch message over the button when pressed */}
           <button onClick={this.handleToggle} className="btn-image">
             {activeImage ? "Remove Image" : "Add Image"}
           </button>
+          {/* To show or hide image */}
           {activeImage && (
             <div className="container-image">
               <img

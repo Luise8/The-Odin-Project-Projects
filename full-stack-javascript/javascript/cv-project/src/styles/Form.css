@@ -1,14 +1,17 @@
+/* Biggest container component */
 .container {
   display: flex;
   justify-content: center;
 }
 
+/* Container that defines the style of the form */
 .containerForm {
   background-color: aquamarine;
   padding: 20px;
   border: 1px solid rgb(41, 42, 44);
 }
 
+/* Input and labels */
 .containerForm input,
 .containerForm label {
   width: 250px;
@@ -19,6 +22,7 @@
   color: #000;
 }
 
+/* Buttons */
 .containerForm .contentBtn {
   display: flex;
   flex-direction: row;

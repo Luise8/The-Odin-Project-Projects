@@ -7,6 +7,7 @@
   font-family: "Ubuntu", sans-serif;
 }
 
+/* To prevent overflow */
 p,
 h1,
 h2,
@@ -15,6 +16,7 @@ h4 {
   word-break: break-all;
 }
 
+/* Buttons */
 button {
   height: 25px;
   background-color: #222;

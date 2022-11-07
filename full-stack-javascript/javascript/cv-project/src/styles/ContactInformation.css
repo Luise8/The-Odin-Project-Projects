@@ -1,3 +1,4 @@
+/* Biggest container component */
 .container-contact-information {
   width: 100%;
   display: flex;
@@ -11,7 +12,7 @@
   padding-bottom: 20px;
 }
 
-/* SINGLE ITEM */
+/* Single item */
 .container-contact-inf-child {
   display: flex;
   flex-direction: column;
@@ -31,7 +32,7 @@
   font-weight: var(--paragraph-font-weight);
 }
 
-/* SHOW BUTTONS */
+/* Show buttons */
 .container-contact-information:hover .container-btn-contact-inf {
   display: flex;
   justify-content: center;

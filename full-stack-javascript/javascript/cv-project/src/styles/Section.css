@@ -1,3 +1,4 @@
+/* Biggest container component */
 .container-section {
   border-bottom-color: var(--borders);
   border-bottom-width: 1px;
@@ -5,12 +6,14 @@
   padding-bottom: 10px;
 }
 
+/* Container of section without items */
 .section-header {
   display: flex;
   gap: 10px;
   position: relative;
 }
 
+/* Buttons */
 .section-header:hover .container-btn-section-header {
   display: flex;
   gap: 10px;
@@ -23,6 +26,7 @@
   right: 5px;
 }
 
+/* Title */
 .section-header .title-section {
   font-size: var(--title-second-font-size);
   font-weight: var(--right-main-title-second-font-weight);

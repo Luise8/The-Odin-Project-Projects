@@ -1,3 +1,5 @@
+// Const with component default values
+
 const example = {
   contactInformation: [
     { key: "address", text: "Add your address" },

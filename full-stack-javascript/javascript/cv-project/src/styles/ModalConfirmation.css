@@ -1,8 +1,10 @@
+/* Biggest container component */
 .container {
   display: flex;
   justify-content: center;
 }
 
+/* Container that defines the style of the form */
 .containerTwo {
   background-color: aquamarine;
   padding: 20px;
@@ -10,6 +12,7 @@
   color: #000;
 }
 
+/* Buttons */
 .containerTwo .contentBtn {
   display: flex;
   flex-direction: row;

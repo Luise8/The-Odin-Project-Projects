@@ -1,7 +1,9 @@
+/* To avoid scrolling */
 body.active-modal {
   overflow-y: hidden;
 }
 
+/* Style overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -16,6 +18,7 @@ body.active-modal {
   z-index: 10000;
 }
 
+/* Class to apply when some modal is active */
 .active {
   display: flex;
 }

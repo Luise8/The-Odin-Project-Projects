@@ -1,3 +1,4 @@
+/* Biggest container component */
 .container-main-information {
   display: flex;
   gap: 14px;
@@ -5,6 +6,8 @@
   padding-bottom: 5px;
   position: relative;
 }
+
+/* Buttons */
 .container-main-information:hover .container-btn-main-inf {
   display: flex;
   gap: 10px;
@@ -17,6 +20,7 @@
   right: 5px;
 }
 
+/* Text */
 .container-main-information h1 {
   font-size: var(--first-title-font-size);
   font-weight: var(--right-main-first-title-font-weight);

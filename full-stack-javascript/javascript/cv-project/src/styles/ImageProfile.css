@@ -1,3 +1,4 @@
+/* Biggest container component */
 .conatiner-profile-image {
   width: 100%;
   position: relative;
@@ -7,11 +8,13 @@
   align-items: center;
 }
 
+/* Just space to separate the border from the top of the page when the image is hidden */
 .conatiner-profile-image-space {
   height: 20px;
   width: 100%;
 }
 
+/* Only show button when hover */
 .btn-image {
   display: none;
   position: absolute;
@@ -24,6 +27,7 @@
   display: flex;
 }
 
+/* container that define size of image, if change also the image will change. To change size, only change the height */
 .container-image {
   position: relative;
   height: 150px;
