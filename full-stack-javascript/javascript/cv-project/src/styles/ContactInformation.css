@@ -7,7 +7,7 @@
   padding-top: 40px;
   border-bottom-width: 3px;
   border-bottom-style: double;
-  border-bottom-color: #333;
+  border-bottom-color: var(--borders);
   padding-bottom: 20px;
 }
 
@@ -22,6 +22,13 @@
 .container-contact-inf-child h3 {
   display: flex;
   justify-content: center;
+  font-size: var(--title-third-font-size);
+  font-weight: var(--sidebar-title-third-font-weight);
+}
+
+.container-contact-inf-child p {
+  font-size: var(--paragraph-font-size);
+  font-weight: var(--paragraph-font-weight);
 }
 
 /* SHOW BUTTONS */
@@ -37,6 +44,6 @@
 }
 
 .container-contact-inf-child a {
-  color: #000;
+  color: var(--right-main-Bg-color-sidebar-color);
   text-decoration: none;
 }
