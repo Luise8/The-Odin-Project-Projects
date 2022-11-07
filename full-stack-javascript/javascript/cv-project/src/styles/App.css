@@ -1,3 +1,45 @@
+:root {
+  /* First color: #313c4e Sidebar Bg-c, biggest title, right-main title first
+Second color: #fff right-main Bg-c, Sidebar color, 
+Third color: #000 right-main paragraph, title second, title third, sidebar special paragraph
+Fourth color: #449399 borders, smallest paragraph
+Fifth color: #adb1b8 sidebar paragraph special Bg-c
+ */
+  --first-color: #313c4e;
+  --second-color: #fff;
+  --third-color: #000;
+  --fourth-color: #449399;
+  --fifth-color: #adb1b8;
+
+  --sidebar-Bg-color: var(--first-color);
+  --right-main-Bg-color-sidebar-color: var(--second-color);
+  --borders: var(--fourth-color);
+  --first-title-font-size: 32px;
+  --right-main-first-title-color: var(--first-color);
+  --right-main-first-title-font-weight: 400;
+  --title-second-font-size: 20px;
+  --right-main-title-second-font-weight: 700;
+  --right-main-title-second-color: var(--first-color);
+  --title-third-font-size: 17px;
+  --right-main-title-third-font-weight: 700;
+  --sidebar-title-third-font-weight: 700;
+  --right-main-title-third-color: var(--third-color);
+  --right-main-title-third-special-color: var(--fourth-color);
+  --right-main-title-third-special-font-weight: 400;
+  --title-fourth-font-size: 17px;
+  --right-main-title-fourth-font-weight: 400;
+  --right-main-title-fourth-color: var(--third-color);
+  --paragraph-font-size: 13px;
+  --paragraph-font-weight: 400;
+  --right-main-paragraph-color: var(--third-color);
+  --sidebar-paragraph-special-color: var(--third-color);
+  --sidebar-paragraph-special-Bg-color: var(--fifth-color);
+  --smallest-paragraph-font-size: 11px;
+  --smallest-paragraph-font-weight: 400;
+  --smallest-paragraph-font-style: italic;
+  --right-main-smallest-paragraph-color: var(--fourth-color);
+}
+
 .main-container {
   display: flex;
   justify-content: center;
