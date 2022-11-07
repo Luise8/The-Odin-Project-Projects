@@ -15,6 +15,10 @@
   display: block;
 }
 
+.containerForm label {
+  color: #000;
+}
+
 .containerForm .contentBtn {
   display: flex;
   flex-direction: row;
@@ -24,8 +28,6 @@
 }
 
 .containerForm button {
-  /* margin-top: 10px; */
-  /*  margin: 10px auto 0 auto; */
   width: 100px;
   height: 25px;
 }
